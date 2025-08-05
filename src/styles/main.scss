@@ -1,0 +1,20 @@
+// Archivo principal que importa todos los estilos SCSS
+
+// 1. Abstracts - Variables y mixins
+@import 'abstracts/variables';
+@import 'abstracts/mixins';
+
+// 2. Base - Resets y estilos base
+@import 'base/reset';
+@import 'base/typography';
+
+// 3. Layout - Estructura general
+@import 'layout/main';
+
+// 4. Components - Componentes reutilizables
+@import 'components/buttons';
+@import 'components/cards';
+@import 'components/forms';
+
+// 5. Utilities - Clases utilitarias
+@import 'utilities/utilities';

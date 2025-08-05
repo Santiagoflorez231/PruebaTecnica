@@ -1,0 +1,185 @@
+// Estilos tipográficos del proyecto
+
+// Clases de tamaño de fuente
+.text-xs { font-size: $font-size-xs; }
+.text-sm { font-size: $font-size-sm; }
+.text-base { font-size: $font-size-base; }
+.text-lg { font-size: $font-size-lg; }
+.text-xl { font-size: $font-size-xl; }
+.text-2xl { font-size: $font-size-2xl; }
+.text-3xl { font-size: $font-size-3xl; }
+.text-4xl { font-size: $font-size-4xl; }
+
+// Pesos de fuente
+.font-normal { font-weight: $font-weight-normal; }
+.font-medium { font-weight: $font-weight-medium; }
+.font-semibold { font-weight: $font-weight-semibold; }
+.font-bold { font-weight: $font-weight-bold; }
+
+// Alineación de texto
+.text-left { text-align: left; }
+.text-center { text-align: center; }
+.text-right { text-align: right; }
+.text-justify { text-align: justify; }
+
+// Colores de texto
+.text-primary { color: $text-primary; }
+.text-secondary { color: $text-secondary; }
+.text-muted { color: $text-muted; }
+.text-white { color: $text-white; }
+.text-blue { color: $primary-color; }
+.text-gray-600 { color: $gray-600; }
+
+// Títulos
+.title {
+  font-weight: $font-weight-semibold;
+  line-height: 1.2;
+  color: $text-primary;
+  margin-bottom: $spacing-4;
+
+  &--h1 {
+    font-size: $font-size-4xl;
+    
+    @include mobile {
+      font-size: $font-size-3xl;
+    }
+  }
+
+  &--h2 {
+    font-size: $font-size-3xl;
+    
+    @include mobile {
+      font-size: $font-size-2xl;
+    }
+  }
+
+  &--h3 {
+    font-size: $font-size-2xl;
+    
+    @include mobile {
+      font-size: $font-size-xl;
+    }
+  }
+
+  &--h4 {
+    font-size: $font-size-xl;
+  }
+
+  &--h5 {
+    font-size: $font-size-lg;
+  }
+
+  &--h6 {
+    font-size: $font-size-base;
+  }
+}
+
+// Párrafos
+.paragraph {
+  line-height: 1.6;
+  margin-bottom: $spacing-4;
+  color: $text-secondary;
+
+  &--large {
+    font-size: $font-size-lg;
+  }
+
+  &--small {
+    font-size: $font-size-sm;
+  }
+}
+
+// Lead text
+.lead {
+  font-size: $font-size-lg;
+  font-weight: $font-weight-normal;
+  line-height: 1.6;
+  color: $text-secondary;
+  margin-bottom: $spacing-6;
+}
+
+// Texto pequeño
+.small {
+  font-size: $font-size-sm;
+  color: $text-muted;
+}
+
+// Texto truncado
+.text-truncate {
+  @include text-truncate;
+}
+
+// Texto con múltiples líneas truncadas
+.text-clamp-2 {
+  @include text-clamp(2);
+}
+
+.text-clamp-3 {
+  @include text-clamp(3);
+}
+
+// Enlaces
+.link {
+  color: $primary-color;
+  text-decoration: none;
+  transition: color $transition-fast;
+  border-bottom: 1px solid transparent;
+
+  &:hover {
+    color: darken($primary-color, 15%);
+    border-bottom-color: currentColor;
+  }
+
+  &--underline {
+    border-bottom: 1px solid currentColor;
+  }
+
+  &--muted {
+    color: $text-muted;
+
+    &:hover {
+      color: $text-secondary;
+    }
+  }
+}
+
+// Código inline
+.code {
+  font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+  font-size: 0.9em;
+  background-color: $gray-100;
+  padding: 2px 4px;
+  border-radius: $border-radius-sm;
+  color: $danger-color;
+}
+
+// Lista con estilo
+.list {
+  margin: 0;
+  padding: 0;
+
+  &--styled {
+    padding-left: $spacing-5;
+    
+    li {
+      list-style: disc;
+      margin-bottom: $spacing-2;
+      line-height: 1.6;
+    }
+  }
+
+  &--numbered {
+    padding-left: $spacing-5;
+    
+    li {
+      list-style: decimal;
+      margin-bottom: $spacing-2;
+      line-height: 1.6;
+    }
+  }
+
+  &--unstyled {
+    list-style: none;
+    padding-left: 0;
+  }
+}

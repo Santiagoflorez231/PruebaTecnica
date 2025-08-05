@@ -1,0 +1,197 @@
+// Estilos para tarjetas (cards)
+
+.card {
+  @include card;
+
+  // Variantes de tarjeta
+  &--elevated {
+    box-shadow: $shadow-xl;
+  }
+
+  &--flat {
+    box-shadow: none;
+    border: 1px solid $gray-200;
+  }
+
+  &--bordered {
+    border: 2px solid $gray-200;
+  }
+
+  // Tamaños de padding
+  &--compact {
+    padding: $spacing-4;
+  }
+
+  &--spacious {
+    padding: $spacing-8;
+  }
+
+  // Header de la tarjeta
+  &__header {
+    padding: $spacing-6 $spacing-6 0 $spacing-6;
+    margin: -$spacing-6 -$spacing-6 $spacing-6 -$spacing-6;
+    border-bottom: 1px solid $gray-200;
+    padding-bottom: $spacing-4;
+  }
+
+  // Cuerpo de la tarjeta
+  &__body {
+    flex: 1;
+  }
+
+  // Footer de la tarjeta
+  &__footer {
+    padding: 0 $spacing-6 $spacing-6 $spacing-6;
+    margin: $spacing-6 -$spacing-6 -$spacing-6 -$spacing-6;
+    border-top: 1px solid $gray-200;
+    padding-top: $spacing-4;
+  }
+
+  // Imagen de la tarjeta
+  &__image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: $border-radius-lg $border-radius-lg 0 0;
+    margin: -$spacing-6 -$spacing-6 $spacing-6 -$spacing-6;
+  }
+
+  // Título de la tarjeta
+  &__title {
+    font-size: $font-size-xl;
+    font-weight: $font-weight-semibold;
+    color: $text-primary;
+    margin-bottom: $spacing-2;
+    line-height: 1.3;
+  }
+
+  // Subtítulo de la tarjeta
+  &__subtitle {
+    font-size: $font-size-sm;
+    color: $text-muted;
+    margin-bottom: $spacing-4;
+  }
+
+  // Contenido de la tarjeta
+  &__content {
+    font-size: $font-size-base;
+    color: $text-secondary;
+    line-height: 1.6;
+    margin-bottom: $spacing-4;
+  }
+
+  // Acciones de la tarjeta
+  &__actions {
+    @include flex-between;
+    gap: $spacing-3;
+    margin-top: $spacing-4;
+
+    &--center {
+      justify-content: center;
+    }
+
+    &--end {
+      justify-content: flex-end;
+    }
+
+    &--vertical {
+      flex-direction: column;
+      align-items: stretch;
+    }
+  }
+
+  // Tarjeta interactiva
+  &--interactive {
+    cursor: pointer;
+    transition: all $transition-normal;
+
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: $shadow-xl;
+    }
+
+    &:active {
+      transform: translateY(0);
+    }
+  }
+
+  // Tarjeta con gradiente
+  &--gradient {
+    background: linear-gradient(135deg, $primary-color 0%, lighten($primary-color, 20%) 100%);
+    color: $text-white;
+
+    .card__title,
+    .card__content {
+      color: $text-white;
+    }
+
+    .card__subtitle {
+      color: rgba($text-white, 0.8);
+    }
+  }
+
+  // Variantes de color
+  &--primary {
+    border-left: 4px solid $primary-color;
+  }
+
+  &--success {
+    border-left: 4px solid $success-color;
+  }
+
+  &--warning {
+    border-left: 4px solid $warning-color;
+  }
+
+  &--danger {
+    border-left: 4px solid $danger-color;
+  }
+
+  &--info {
+    border-left: 4px solid $info-color;
+  }
+}
+
+// Grid de tarjetas
+.card-grid {
+  @include grid-responsive(1, 2, 3);
+
+  &--4-cols {
+    @include grid-responsive(1, 2, 4);
+  }
+
+  &--2-cols {
+    @include grid-responsive(1, 1, 2);
+  }
+
+  &--auto-fit {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: $spacing-6;
+  }
+}
+
+// Tarjeta de características (features)
+.feature-card {
+  @extend .card;
+  @include text-center;
+  
+  &__icon {
+    font-size: 3rem;
+    margin-bottom: $spacing-4;
+    display: block;
+  }
+
+  &__title {
+    font-size: $font-size-lg;
+    font-weight: $font-weight-semibold;
+    color: $text-primary;
+    margin-bottom: $spacing-3;
+  }
+
+  &__description {
+    font-size: $font-size-sm;
+    color: $text-secondary;
+    line-height: 1.6;
+  }
+}

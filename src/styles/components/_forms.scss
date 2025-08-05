@@ -1,0 +1,157 @@
+// Estilos para formularios
+
+.form {
+  &__group {
+    margin-bottom: $spacing-4;
+  }
+
+  &__label {
+    display: block;
+    font-size: $font-size-sm;
+    font-weight: $font-weight-medium;
+    color: $text-primary;
+    margin-bottom: $spacing-2;
+  }
+
+  &__input {
+    width: 100%;
+    padding: $spacing-3;
+    border: 1px solid $gray-300;
+    border-radius: $border-radius;
+    font-size: $font-size-base;
+    transition: border-color $transition-fast, box-shadow $transition-fast;
+
+    &:focus {
+      outline: none;
+      border-color: $primary-color;
+      box-shadow: 0 0 0 3px rgba($primary-color, 0.1);
+    }
+
+    &::placeholder {
+      color: $text-muted;
+    }
+
+    &--error {
+      border-color: $danger-color;
+
+      &:focus {
+        border-color: $danger-color;
+        box-shadow: 0 0 0 3px rgba($danger-color, 0.1);
+      }
+    }
+  }
+
+  &__textarea {
+    @extend .form__input;
+    resize: vertical;
+    min-height: 100px;
+  }
+
+  &__select {
+    @extend .form__input;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3e%3c/svg%3e");
+    background-position: right 8px center;
+    background-repeat: no-repeat;
+    background-size: 16px;
+    padding-right: 40px;
+  }
+
+  &__error {
+    color: $danger-color;
+    font-size: $font-size-sm;
+    margin-top: $spacing-1;
+  }
+
+  &__help {
+    color: $text-muted;
+    font-size: $font-size-sm;
+    margin-top: $spacing-1;
+  }
+
+  &__checkbox,
+  &__radio {
+    position: relative;
+    display: flex;
+    align-items: center;
+    margin-bottom: $spacing-2;
+
+    input {
+      margin-right: $spacing-2;
+      accent-color: $primary-color;
+    }
+
+    label {
+      font-size: $font-size-sm;
+      color: $text-primary;
+      cursor: pointer;
+    }
+  }
+
+  &__actions {
+    @include flex-between;
+    gap: $spacing-3;
+    margin-top: $spacing-6;
+
+    &--center {
+      justify-content: center;
+    }
+
+    &--end {
+      justify-content: flex-end;
+    }
+
+    &--vertical {
+      flex-direction: column;
+    }
+  }
+}
+
+// Página de login específica
+.login-page {
+  min-height: 100vh;
+  @include flex-center;
+  background-color: $bg-secondary;
+  padding: $spacing-6;
+
+  &__container {
+    width: 100%;
+    max-width: 400px;
+  }
+
+  &__header {
+    @include text-center;
+    margin-bottom: $spacing-8;
+  }
+
+  &__title {
+    margin-bottom: $spacing-2;
+  }
+
+  &__subtitle {
+    color: $text-secondary;
+    font-size: $font-size-sm;
+  }
+
+  &__form {
+    background-color: $bg-primary;
+    padding: $spacing-8;
+    border-radius: $border-radius-lg;
+    box-shadow: $shadow-lg;
+  }
+
+  &__link {
+    @include text-center;
+    margin-top: $spacing-4;
+
+    a {
+      color: $primary-color;
+      font-size: $font-size-sm;
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}
