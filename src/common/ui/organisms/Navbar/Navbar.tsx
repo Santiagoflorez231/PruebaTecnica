@@ -35,7 +35,6 @@ const Navbar = () => {
       transition={{ duration: 0.6, ease: "easeOut" }}
     >
       <nav className="navbar__container">
-        {/* Logo/Brand */}
         <motion.div
           className="navbar__brand"
           whileHover={{ scale: 1.05 }}
@@ -47,7 +46,6 @@ const Navbar = () => {
           </Link>
         </motion.div>
 
-        {/* Desktop Navigation */}
         <div className="navbar__nav navbar__nav--desktop">
           <ul className="navbar__menu">
             {navItems.map((item, index) => (
@@ -76,7 +74,6 @@ const Navbar = () => {
           </ul>
         </div>
 
-        {/* CTA Button */}
         <motion.div
           className="navbar__actions"
           initial={{ opacity: 0, x: 20 }}
@@ -94,7 +91,6 @@ const Navbar = () => {
           </Link>
         </motion.div>
 
-        {/* Mobile Menu Toggle */}
         <motion.button
           className="navbar__toggle"
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
@@ -127,7 +123,6 @@ const Navbar = () => {
         </motion.button>
       </nav>
 
-      {/* Mobile Menu */}
       <motion.div
         className="navbar__mobile"
         initial={false}

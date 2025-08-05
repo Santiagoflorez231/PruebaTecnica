@@ -28,7 +28,7 @@ const HeroSection = ({ onCtaClick }: HeroSectionProps) => {
       title: "Estilo Urbano Moderno",
       subtitle: "Descubre las últimas tendencias",
       description: "Ropa cómoda y elegante para tu día a día. Combina estilo y comodidad en cada prenda.",
-      ctaText: "Explorar Colección",
+      ctaText: "Ver Catálogo",
       image: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=600&h=800&fit=crop&crop=faces",
       discount: "30% OFF"
     },
@@ -38,7 +38,7 @@ const HeroSection = ({ onCtaClick }: HeroSectionProps) => {
       title: "Elegancia Atemporal",
       subtitle: "Piezas que nunca pasan de moda",
       description: "Invierte en prendas de calidad que te acompañarán durante años. Estilo clásico renovado.",
-      ctaText: "Ver Ofertas",
+      ctaText: "Ver Catálogo",
       image: "https://images.unsplash.com/photo-1434389677669-e08b4cac3105?w=600&h=800&fit=crop&crop=faces"
     },
     {
@@ -47,7 +47,7 @@ const HeroSection = ({ onCtaClick }: HeroSectionProps) => {
       title: "Casual Premium",
       subtitle: "Comodidad sin comprometer el estilo",
       description: "La perfecta fusión entre confort y elegancia. Ideal para cualquier ocasión casual.",
-      ctaText: "Comprar Ahora",
+      ctaText: "Ver Catálogo",
       image: "https://images.unsplash.com/photo-1445205170230-053b83016050?w=600&h=800&fit=crop&crop=faces",
       discount: "NUEVO"
     }
@@ -72,7 +72,6 @@ const HeroSection = ({ onCtaClick }: HeroSectionProps) => {
   return (
     <section className="hero-section">
       <div className="hero-section__container">
-        {/* Contenido del lado izquierdo */}
         <div className="hero-section__content">
           <AnimatePresence mode="wait">
             <motion.div
@@ -143,18 +142,11 @@ const HeroSection = ({ onCtaClick }: HeroSectionProps) => {
                 >
                   {slides[currentSlide].ctaText}
                 </Button>
-                <motion.button 
-                  className="hero-section__secondary-btn"
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                >
-                  Ver Catálogo
-                </motion.button>
+              
               </motion.div>
             </motion.div>
           </AnimatePresence>
 
-          {/* Indicadores */}
           <div className="hero-section__indicators">
             {slides.map((_, index) => (
               <button
@@ -167,7 +159,6 @@ const HeroSection = ({ onCtaClick }: HeroSectionProps) => {
           </div>
         </div>
 
-        {/* Carrusel de imágenes del lado derecho */}
         <div className="hero-section__carousel">
           <AnimatePresence mode="wait">
             <motion.div
@@ -193,22 +184,6 @@ const HeroSection = ({ onCtaClick }: HeroSectionProps) => {
               </div>
             </motion.div>
           </AnimatePresence>
-
-          {/* Navegación del carrusel */}
-          <button 
-            className="hero-section__nav hero-section__nav--prev"
-            onClick={() => handleSlideChange(currentSlide === 0 ? slides.length - 1 : currentSlide - 1)}
-            aria-label="Imagen anterior"
-          >
-            ←
-          </button>
-          <button 
-            className="hero-section__nav hero-section__nav--next"
-            onClick={() => handleSlideChange(currentSlide === slides.length - 1 ? 0 : currentSlide + 1)}
-            aria-label="Siguiente imagen"
-          >
-            →
-          </button>
         </div>
       </div>
     </section>

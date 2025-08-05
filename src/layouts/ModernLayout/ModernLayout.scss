@@ -2,8 +2,6 @@
 @import '../../styles/abstracts/variables';
 @import '../../styles/abstracts/mixins';
 
-// Estilos para el layout moderno
-
 .modern-layout {
   min-height: 100vh;
   display: flex;
@@ -15,7 +13,6 @@
     position: relative;
     overflow-x: hidden;
     
-    // Patrón de fondo sutil
     &::before {
       content: '';
       position: absolute;
@@ -31,12 +28,10 @@
   }
 }
 
-// Scroll suave para toda la página
 html {
   scroll-behavior: smooth;
 }
 
-// Scroll personalizado para webkit
 ::-webkit-scrollbar {
   width: 6px;
 }
@@ -54,7 +49,6 @@ html {
   }
 }
 
-// Efectos de entrada para páginas
 .page-enter {
   opacity: 0;
   transform: translateY(30px);

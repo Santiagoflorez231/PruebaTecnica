@@ -1,17 +1,13 @@
-// Atoms
 import Button from '@/common/ui/atoms/Button';
 import Title from '@/common/ui/atoms/Title';
 
-// Molecules  
 import HeroSection from '@/common/ui/molecules/HeroSection';
 
-// Widgets
 import FeaturesWidget from '@/common/ui/widgets/FeaturesWidget';
 
 const Home = () => {
   const handleHeroCtaClick = (slideId: number) => {
     console.log(`Navegando a producto/colección ${slideId}`);
-    // Aquí podrías navegar a una página específica según el slide
   };
 
   return (
