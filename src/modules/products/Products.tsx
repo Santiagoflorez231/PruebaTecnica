@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { useState } from 'react';
+import { useProducts } from '@/api/queries/products';
 import ProductCard from '@/common/ui/molecules/ProductCard';
 import Title from '@/common/ui/atoms/Title';
 import Button from '@/common/ui/atoms/Button';
@@ -8,14 +9,24 @@ import './Products.scss';
 const Products = () => {
   const [selectedCategory, setSelectedCategory] = useState('all');
   const [sortBy, setSortBy] = useState('featured');
+  const [currentPage, setCurrentPage] = useState(1);
+  const itemsPerPage = 12;
 
+  const { 
+    data: products = [], 
+    isLoading, 
+    error 
+  } = useProducts({ 
+    limit: currentPage * itemsPerPage,
+    sort: sortBy === 'featured' ? 'name' : sortBy.includes('price') ? 'price' : 'name',
+    order: sortBy === 'price-high' ? 'desc' : 'asc'
+  });
+
+  // Extraer categorías reales de los productos de la API
   const categories = [
     { id: 'all', name: 'Todos los Productos' },
-    { id: 'dresses', name: 'Vestidos' },
-    { id: 'tops', name: 'Blusas & Tops' },
-    { id: 'pants', name: 'Pantalones' },
-    { id: 'accessories', name: 'Accesorios' },
-    { id: 'shoes', name: 'Calzado' }
+    ...Array.from(new Set(products.map(p => p.brand).filter(Boolean)))
+      .map(brand => ({ id: brand, name: brand }))
   ];
 
   const sortOptions = [
@@ -25,93 +36,27 @@ const Products = () => {
     { id: 'newest', name: 'Más Recientes' }
   ];
 
-  const products = [
-    {
-      id: 1,
-      name: "Vestido Elegante Parisino",
-      description: "Seda Premium con Bordados Artesanales",
-      price: "€890.00",
-      category: "dresses",
-      images: [
-        "https://images.unsplash.com/photo-1595777457583-95e059d581b8?w=400&h=600&fit=crop&crop=faces",
-        "https://images.unsplash.com/photo-1434389677669-e08b4cac3105?w=400&h=600&fit=crop&crop=faces"
-      ],
-      totalImages: 8,
-      additionalColors: 3,
-      isNew: true
-    },
-    {
-      id: 2,
-      name: "Blazer Ejecutivo Premium",
-      description: "Lana Italiana 100% - Corte Tailored",
-      price: "€1.250.00",
-      category: "tops",
-      images: [
-        "https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?w=400&h=600&fit=crop&crop=faces",
-        "https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=400&h=600&fit=crop&crop=center"
-      ],
-      totalImages: 6,
-      additionalColors: 2,
-      isNew: false
-    },
-    {
-      id: 3,
-      name: "Pantalón Wide Leg Minimalista",
-      description: "Algodón Orgánico - Diseño Atemporal",
-      price: "€450.00",
-      category: "pants",
-      images: [
-        "https://images.unsplash.com/photo-1596755094514-f87e34085b2c?w=400&h=600&fit=crop&crop=faces",
-        "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=400&h=600&fit=crop&crop=faces"
-      ],
-      totalImages: 5,
-      additionalColors: 4,
-      isNew: true
-    },
-    {
-      id: 4,
-      name: "Bolso Tote Signature",
-      description: "Cuero Genuino - Edición Limitada",
-      price: "€680.00",
-      category: "accessories",
-      images: [
-        "https://images.unsplash.com/photo-1549298916-b41d501d3772?w=400&h=600&fit=crop&crop=center"
-      ],
-      totalImages: 4,
-      additionalColors: 1,
-      isNew: false
-    },
-    {
-      id: 5,
-      name: "Camisa Oversized Contemporánea",
-      description: "Lino Natural - Confección Artesanal",
-      price: "€320.00",
-      category: "tops",
-      images: [
-        "https://images.unsplash.com/photo-1551028719-00167b16eac5?w=400&h=600&fit=crop&crop=faces"
-      ],
-      totalImages: 7,
-      additionalColors: 5,
-      isNew: true
-    },
-    {
-      id: 6,
-      name: "Zapatos Oxford Premium",
-      description: "Cuero Italiano - Suela de Cuero",
-      price: "€950.00",
-      category: "shoes",
-      images: [
-        "https://images.unsplash.com/photo-1549298916-b41d501d3772?w=400&h=600&fit=crop&crop=center"
-      ],
-      totalImages: 6,
-      additionalColors: 2,
-      isNew: false
-    }
-  ];
-
+  // Filtrar productos por categoría usando solo datos reales
   const filteredProducts = selectedCategory === 'all' 
     ? products 
-    : products.filter(product => product.category === selectedCategory);
+    : products.filter(product => product.brand === selectedCategory);
+
+  // Solo ordenar si es necesario (la API ya puede manejar el ordenamiento)
+  const sortedProducts = [...filteredProducts];
+
+  const handleLoadMore = () => {
+    setCurrentPage(prev => prev + 1);
+  };
+
+  const handleCategoryChange = (categoryId: string) => {
+    setSelectedCategory(categoryId);
+    setCurrentPage(1); // Reset página al cambiar categoría
+  };
+
+  const handleSortChange = (newSortBy: string) => {
+    setSortBy(newSortBy);
+    setCurrentPage(1); // Reset página al cambiar ordenamiento
+  };
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -128,6 +73,19 @@ const Products = () => {
     hidden: { opacity: 0, y: 30 },
     visible: { opacity: 1, y: 0 }
   };
+
+  if (error) {
+    return (
+      <div className="products-page">
+        <div className="container">
+          <div className="products-error">
+            <h2>Error al cargar productos</h2>
+            <p>Por favor, intenta nuevamente más tarde.</p>
+          </div>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="products-page">
@@ -175,7 +133,7 @@ const Products = () => {
                   className={`products-filters__category ${
                     selectedCategory === category.id ? 'active' : ''
                   }`}
-                  onClick={() => setSelectedCategory(category.id)}
+                  onClick={() => handleCategoryChange(category.id)}
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                 >
@@ -188,7 +146,7 @@ const Products = () => {
             <div className="products-filters__sort">
               <select
                 value={sortBy}
-                onChange={(e) => setSortBy(e.target.value)}
+                onChange={(e) => handleSortChange(e.target.value)}
                 className="products-filters__select"
               >
                 {sortOptions.map((option) => (
@@ -198,6 +156,15 @@ const Products = () => {
                 ))}
               </select>
             </div>
+
+            {/* Results Count */}
+            <div className="products-filters__count">
+              {isLoading ? (
+                <span>Cargando...</span>
+              ) : (
+                <span>{sortedProducts.length} productos encontrados</span>
+              )}
+            </div>
           </div>
         </div>
       </section>
@@ -205,53 +172,71 @@ const Products = () => {
       {/* Products Grid */}
       <section className="products-grid-section">
         <div className="container">
-          <motion.div
-            className="products-grid"
-            variants={containerVariants}
-            initial="hidden"
-            animate="visible"
-          >
-            {filteredProducts.map((product) => (
+          {isLoading && currentPage === 1 ? (
+            <div className="products-loading">
               <motion.div
-                key={product.id}
-                variants={itemVariants}
-                layout
-                className="products-grid__item"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                className="products-loading__content"
               >
-                <ProductCard
-                  name={product.name}
-                  description={product.description}
-                  price={product.price}
-                  images={product.images}
-                  totalImages={product.totalImages}
-                  additionalColors={product.additionalColors}
-                />
+                <p>Cargando productos...</p>
               </motion.div>
-            ))}
-          </motion.div>
+            </div>
+          ) : (
+            <>
+              <motion.div
+                className="products-grid"
+                variants={containerVariants}
+                initial="hidden"
+                animate="visible"
+              >
+                {sortedProducts.map((product) => (
+                  <motion.div
+                    key={product.id}
+                    variants={itemVariants}
+                    layout
+                    className="products-grid__item"
+                  >
+                    <ProductCard product={product} />
+                  </motion.div>
+                ))}
+              </motion.div>
+
+              {/* No results message */}
+              {sortedProducts.length === 0 && !isLoading && (
+                <div className="products-no-results">
+                  <h3>No se encontraron productos</h3>
+                  <p>Intenta ajustar los filtros de búsqueda</p>
+                </div>
+              )}
+            </>
+          )}
         </div>
       </section>
 
       {/* Load More Section */}
-      <section className="products-load-more">
-        <div className="container">
-          <div className="products-load-more__content">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-            >
-              <Button 
-                variant="secondary"
-                className="products-load-more__button"
-                onClick={() => console.log('Loading more products...')}
+      {sortedProducts.length > 0 && sortedProducts.length >= currentPage * itemsPerPage && (
+        <section className="products-load-more">
+          <div className="container">
+            <div className="products-load-more__content">
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6 }}
               >
-                Ver Más Productos
-              </Button>
-            </motion.div>
+                <Button 
+                  variant="secondary"
+                  className="products-load-more__button"
+                  onClick={handleLoadMore}
+                  disabled={isLoading}
+                >
+                  {isLoading ? 'Cargando...' : 'Ver Más Productos'}
+                </Button>
+              </motion.div>
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+      )}
     </div>
   );
 };
