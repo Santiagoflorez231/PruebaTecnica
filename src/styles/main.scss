@@ -16,5 +16,10 @@
 @import 'components/cards';
 @import 'components/forms';
 
-// 5. Utilities - Clases utilitarias
+// 5. UI Components - Componentes específicos
+@import '../common/ui/organisms/Navbar/Navbar';
+@import '../common/ui/organisms/Footer/Footer';
+@import '../layouts/ModernLayout/ModernLayout';
+
+// 6. Utilities - Clases utilitarias
 @import 'utilities/utilities';

@@ -1,0 +1,78 @@
+@use 'sass:color';
+@import '../../styles/abstracts/variables';
+@import '../../styles/abstracts/mixins';
+
+// Estilos para el layout moderno
+
+.modern-layout {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(135deg, $bg-secondary 0%, color.adjust($bg-secondary, $lightness: 2%) 100%);
+
+  &__main {
+    flex: 1;
+    position: relative;
+    overflow-x: hidden;
+    
+    // Patrón de fondo sutil
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-image: 
+        radial-gradient(circle at 25% 25%, rgba($primary-color, 0.02) 0%, transparent 50%),
+        radial-gradient(circle at 75% 75%, rgba($secondary-color, 0.02) 0%, transparent 50%);
+      pointer-events: none;
+    }
+  }
+}
+
+// Scroll suave para toda la página
+html {
+  scroll-behavior: smooth;
+}
+
+// Scroll personalizado para webkit
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba($primary-color, 0.3);
+  border-radius: 3px;
+  
+  &:hover {
+    background: rgba($primary-color, 0.5);
+  }
+}
+
+// Efectos de entrada para páginas
+.page-enter {
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+.page-enter-active {
+  opacity: 1;
+  transform: translateY(0);
+  transition: all 400ms ease-out;
+}
+
+.page-exit {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.page-exit-active {
+  opacity: 0;
+  transform: translateY(-30px);
+  transition: all 300ms ease-in;
+}

@@ -11,7 +11,7 @@ const Home = lazy(() => import('@/modules/home/Home'));
 const Login = lazy(() => import('@/modules/auth/Login'));
 const NotFound = lazy(() => import('@/modules/error/NotFound'));
 
-const MainLayout = lazy(() => import('@/layouts/MainLayout'));
+const ModernLayout = lazy(() => import('@/layouts/ModernLayout'));
 
 const AppRouter = () => {
   return (
@@ -20,7 +20,7 @@ const AppRouter = () => {
         <Routes>
           <Route path="/login" element={<Login />} />
           
-          <Route path="/" element={<MainLayout />}>
+          <Route path="/" element={<ModernLayout />}>
             <Route index element={<Home />} />
           </Route>
           <Route path="/404" element={<NotFound />} />

@@ -1,38 +1,43 @@
-// Variables globales para el proyecto
+// Variables globales para ecommerce de ropa
 
-// Colores principales
-$primary-color: #3b82f6;
-$secondary-color: #6b7280;
+// Colores principales para ecommerce
+$primary-color: #1a1a1a; // Negro elegante
+$secondary-color: #6b7280; // Gris neutro
+$accent-color: #d4af37; // Dorado elegante para detalles
 $success-color: #10b981;
 $danger-color: #ef4444;
 $warning-color: #f59e0b;
 $info-color: #06b6d4;
 
-// Colores de grises
-$gray-50: #f9fafb;
-$gray-100: #f3f4f6;
-$gray-200: #e5e7eb;
-$gray-300: #d1d5db;
-$gray-400: #9ca3af;
-$gray-500: #6b7280;
-$gray-600: #4b5563;
-$gray-700: #374151;
-$gray-800: #1f2937;
-$gray-900: #111827;
+// Paleta de grises elegantes
+$gray-50: #fafafa;
+$gray-100: #f5f5f5;
+$gray-200: #e5e5e5;
+$gray-300: #d4d4d4;
+$gray-400: #a3a3a3;
+$gray-500: #737373;
+$gray-600: #525252;
+$gray-700: #404040;
+$gray-800: #262626;
+$gray-900: #171717;
 
-// Colores de fondo
-$bg-primary: #ffffff;
-$bg-secondary: $gray-50;
+// Colores de fondo para ecommerce
+$bg-primary: #ffffff; // Fondo blanco limpio
+$bg-secondary: $gray-50; // Gris muy claro
 $bg-dark: $gray-900;
+$bg-navbar: rgba(255, 255, 255, 0.95); // Blanco semitransparente
 
 // Colores de texto
-$text-primary: $gray-900;
-$text-secondary: $gray-600;
-$text-muted: $gray-500;
+$text-primary: $gray-900; // Negro para texto principal
+$text-secondary: $gray-600; // Gris medio
+$text-muted: $gray-500; // Gris claro
 $text-white: #ffffff;
+$text-accent: $accent-color; // Dorado para elementos especiales
 
-// Tipografía
-$font-family-base: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+// Tipografía para ecommerce (Poppins + Inter)
+$font-family-base: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+$font-family-heading: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+$font-family-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 $font-size-xs: 0.75rem;   // 12px
 $font-size-sm: 0.875rem;  // 14px
 $font-size-base: 1rem;    // 16px

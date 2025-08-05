@@ -1,0 +1,283 @@
+@import '../../../../styles/abstracts/variables';
+@import '../../../../styles/abstracts/mixins';
+
+// Estilos para el Navbar de ecommerce elegante con blur
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: $z-fixed;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  background: rgba(248, 250, 252, 0.85); // Gris muy claro transparente
+  border-bottom: 1px solid rgba(203, 213, 225, 0.3); // Borde sutil
+  transition: all $transition-normal;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  
+  &--scrolled {
+    backdrop-filter: blur(25px);
+    -webkit-backdrop-filter: blur(25px);
+    background: rgba(248, 250, 252, 0.95); // Más opaco al hacer scroll
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    border-bottom: 1px solid rgba(203, 213, 225, 0.5);
+  }
+
+  &__container {
+    @include container;
+    @include flex-between;
+    height: 80px;
+    position: relative;
+
+    @include mobile {
+      height: 70px;
+    }
+  }
+
+  &__brand {
+    z-index: $z-modal;
+  }
+
+  &__logo {
+    @include flex-center;
+    text-decoration: none;
+    gap: 2px;
+
+    &-text {
+      font-family: $font-family-heading;
+      font-size: $font-size-2xl;
+      font-weight: 700;
+      color: $primary-color;
+      letter-spacing: -0.5px;
+      transition: color $transition-fast;
+      
+      &:hover {
+        color: $text-accent;
+      }
+    }
+
+    &-dot {
+      font-size: $font-size-3xl;
+      color: $text-accent;
+      font-weight: $font-weight-bold;
+    }
+  }
+
+  &__nav {
+    &--desktop {
+      @include mobile {
+        display: none;
+      }
+    }
+  }
+
+  &__menu {
+    @include flex-center;
+    gap: $spacing-8;
+    list-style: none;
+
+    @include tablet {
+      gap: $spacing-6;
+    }
+  }
+
+  &__item {
+    position: relative;
+  }
+
+  &__link {
+    position: relative;
+    padding: $spacing-3 $spacing-4;
+    font-family: $font-family-body;
+    font-weight: 500;
+    font-size: $font-size-base;
+    color: $text-secondary;
+    text-decoration: none;
+    border-radius: $border-radius-lg;
+    transition: all $transition-fast;
+    letter-spacing: 0.2px;
+
+    &:hover {
+      color: $primary-color;
+      background: rgba($primary-color, 0.04);
+    }
+
+    &--active {
+      color: $primary-color;
+      font-weight: 600;
+      background: rgba($primary-color, 0.1);
+    }
+
+    &-indicator {
+      position: absolute;
+      bottom: -2px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 20px;
+      height: 3px;
+      background: linear-gradient(90deg, $primary-color, lighten($primary-color, 20%));
+      border-radius: 2px;
+    }
+  }
+
+  &__actions {
+    @include mobile {
+      display: none;
+    }
+  }
+
+  &__cta {
+    text-decoration: none;
+  }
+
+  &__toggle {
+    display: none; // Oculto por defecto
+    @include flex-column-center;
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.1);
+    border: none;
+    border-radius: $border-radius;
+    cursor: pointer;
+    z-index: $z-modal;
+    transition: background $transition-fast;
+
+    &:hover {
+      background: rgba(255, 255, 255, 0.2);
+    }
+
+    // Solo mostrar en tablets y móviles
+    @include tablet {
+      display: flex;
+    }
+    
+    @include mobile {
+      display: flex;
+    }
+  }
+
+  &__hamburger {
+    width: 24px;
+    height: 18px;
+    position: relative;
+
+    span {
+      position: absolute;
+      width: 100%;
+      height: 2px;
+      background: $text-primary;
+      border-radius: 1px;
+      transition: all $transition-normal;
+
+      &:nth-child(1) {
+        top: 0;
+      }
+
+      &:nth-child(2) {
+        top: 8px;
+      }
+
+      &:nth-child(3) {
+        top: 16px;
+      }
+    }
+  }
+
+  &__mobile {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: rgba(248, 250, 252, 0.95); // Mismo fondo que el navbar
+    backdrop-filter: blur(25px);
+    -webkit-backdrop-filter: blur(25px);
+    border-bottom: 1px solid rgba(203, 213, 225, 0.3);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+
+    @include desktop {
+      display: none;
+    }
+
+    &-menu {
+      list-style: none;
+      padding: $spacing-6 0;
+    }
+
+    &-item {
+      margin-bottom: $spacing-2;
+    }
+
+    &-link {
+      display: block;
+      padding: $spacing-4 $spacing-6;
+      font-weight: $font-weight-medium;
+      color: $text-secondary;
+      text-decoration: none;
+      transition: all $transition-fast;
+      border-left: 3px solid transparent;
+
+      &:hover,
+      &--active {
+        color: $primary-color;
+        background: rgba($primary-color, 0.05);
+        border-left-color: $primary-color;
+      }
+    }
+
+    &-cta {
+      display: block;
+      margin: $spacing-4 $spacing-6;
+      padding: $spacing-3 $spacing-6;
+      background: $primary-color;
+      color: $text-white;
+      text-decoration: none;
+      text-align: center;
+      border-radius: $border-radius-lg;
+      font-weight: $font-weight-medium;
+      transition: all $transition-fast;
+
+      &:hover {
+        background: darken($primary-color, 10%);
+        transform: translateY(-1px);
+      }
+    }
+  }
+}
+
+// Animación para el punto del logo
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.7;
+    transform: scale(0.9);
+  }
+}
+
+// Espaciado para el contenido cuando hay navbar fijo
+body {
+  padding-top: 80px;
+
+  @include mobile {
+    padding-top: 70px;
+  }
+}
+
+// Soporte para navegadores sin backdrop-filter
+@supports not (backdrop-filter: blur(20px)) {
+  .navbar {
+    background: rgba(255, 255, 255, 0.98);
+
+    &--scrolled {
+      background: rgba(255, 255, 255, 1);
+    }
+
+    &__mobile {
+      background: rgba(255, 255, 255, 0.98);
+    }
+  }
+}
