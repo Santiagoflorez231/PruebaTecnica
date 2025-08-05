@@ -165,14 +165,14 @@ const CatalogGrid = ({  }: CatalogGridProps) => {
                 ¿Listo para empezar?
               </motion.h3>
               
-              <motion.p 
+            <motion.p 
                 className="catalog-grid__cta-description"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.4, duration: 0.6 }}
-              >
-                Explora todas las funcionalidades que tenemos para ti.
-              </motion.p>
+            >
+                Encuentra las prendas perfectas para expresar tu estilo único.
+            </motion.p>
 
               <motion.button 
                 className="catalog-grid__cta-button"
