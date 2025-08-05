@@ -154,6 +154,50 @@
     }
   }
 
+  // Estilos del carrito de compras
+  &__cart {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    border: none;
+    border-radius: $border-radius-lg;
+    background: transparent;
+    color: $text-secondary;
+    cursor: pointer;
+    transition: all $transition-fast;
+
+    &:hover {
+      background: rgba($primary-color, 0.08);
+      color: $primary-color;
+    }
+
+    &-icon {
+      width: 22px;
+      height: 22px;
+    }
+
+    &-count {
+      position: absolute;
+      top: -2px;
+      right: -2px;
+      min-width: 18px;
+      height: 18px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+      color: white;
+      font-size: 11px;
+      font-weight: 600;
+      border-radius: 50%;
+      padding: 0 4px;
+      box-shadow: 0 2px 8px rgba(239, 68, 68, 0.3);
+    }
+  }
+
   &__cta {
     text-decoration: none;
   }
@@ -253,21 +297,30 @@
       }
     }
 
-    &-cta {
-      display: block;
-      margin: $spacing-4 $spacing-6;
-      padding: $spacing-3 $spacing-6;
-      background: $primary-color;
-      color: $text-white;
-      text-decoration: none;
-      text-align: center;
+    &-cart {
+      display: flex;
+      align-items: center;
+      gap: $spacing-3;
+      width: calc(100% - #{$spacing-12});
+      padding: $spacing-4 $spacing-6;
+      margin: $spacing-4 $spacing-6 0;
+      border: 2px solid rgba($primary-color, 0.2);
       border-radius: $border-radius-lg;
-      font-weight: $font-weight-medium;
+      background: rgba($primary-color, 0.05);
+      color: $primary-color;
+      font-weight: 500;
+      text-decoration: none;
       transition: all $transition-fast;
+      cursor: pointer;
 
       &:hover {
-        background: darken($primary-color, 10%);
-        transform: translateY(-1px);
+        background: rgba($primary-color, 0.1);
+        border-color: rgba($primary-color, 0.3);
+      }
+
+      svg {
+        width: 20px;
+        height: 20px;
       }
     }
   }
