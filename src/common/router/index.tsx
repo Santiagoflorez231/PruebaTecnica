@@ -8,6 +8,7 @@ const LoadingSpinner = () => (
 );
 
 const Home = lazy(() => import('@/modules/home/Home'));
+const Products = lazy(() => import('@/modules/products/Products'));
 const Login = lazy(() => import('@/modules/auth/Login'));
 const NotFound = lazy(() => import('@/modules/error/NotFound'));
 
@@ -22,6 +23,7 @@ const AppRouter = () => {
           
           <Route path="/" element={<ModernLayout />}>
             <Route index element={<Home />} />
+            <Route path="productos" element={<Products />} />
           </Route>
           <Route path="/404" element={<NotFound />} />
           <Route path="*" element={<Navigate to="/404" replace />} />
