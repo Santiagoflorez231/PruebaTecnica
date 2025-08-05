@@ -26,12 +26,36 @@
 
   &__container {
     @include container;
-    @include flex-between;
+    display: flex;
+    justify-content: space-between; // Distribuir espacio entre los extremos
+    align-items: center;
     height: 80px;
     position: relative;
 
     @include mobile {
       height: 70px;
+    }
+  }
+
+  // Contenedor para logo + navegación (lado izquierdo)
+  &__left-section {
+    display: flex;
+    align-items: center;
+    gap: $spacing-8; // Espacio entre logo y navegación
+
+    @include tablet {
+      gap: $spacing-6;
+    }
+  }
+
+  // Contenedor para acciones + toggle (lado derecho)
+  &__right-section {
+    display: flex;
+    align-items: center;
+    gap: $spacing-4;
+
+    @include tablet {
+      gap: $spacing-3;
     }
   }
 
@@ -73,9 +97,12 @@
   }
 
   &__menu {
-    @include flex-center;
+    display: flex;
+    align-items: center;
     gap: $spacing-8;
     list-style: none;
+    margin: 0; // Quitar margen por defecto
+    padding: 0; // Quitar padding por defecto
 
     @include tablet {
       gap: $spacing-6;

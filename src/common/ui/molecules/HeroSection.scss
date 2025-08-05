@@ -151,10 +151,10 @@
     display: flex;
     gap: $spacing-4;
     align-items: center;
-    margin-bottom: $spacing-4; // Reducir margen significativamente
+    margin-bottom: $spacing-4; 
 
     @include tablet {
-      justify-content: center; // Centrar en tablet
+      justify-content: center; 
     }
 
     @include mobile {
@@ -175,7 +175,6 @@
     transition: all 0.3s ease;
     box-shadow: 0 8px 25px rgba(26, 26, 26, 0.3);
     
-    // Centrar el botón cuando está solo
     margin: 0 auto;
 
     &:hover {
@@ -184,20 +183,20 @@
     }
 
     @include tablet {
-      margin: 0 auto; // Centrar en tablet
+      margin: 0 auto; 
     }
 
     @include mobile {
       width: 100%;
       justify-content: center;
-      margin: 0 auto; // Centrar en móvil
+      margin: 0 auto; 
     }
   }
 
   &__indicators {
     display: flex;
     gap: $spacing-3;
-    margin-top: $spacing-4; // Reducir margen superior
+    margin-top: $spacing-4;
 
     @include tablet {
       justify-content: center;
@@ -225,19 +224,18 @@
 
   &__carousel {
     position: relative;
-    height: 100%; // Usar toda la altura disponible
-    max-height: calc(100vh - 140px); // Ajustar para el nuevo padding reducido
-
+    height: 100%; 
+    max-height: calc(100vh - 140px); 
     @include tablet {
       order: 1;
-      height: 40vh; // Reducir altura en tablet
+      height: 40vh; 
       max-height: 40vh;
     }
 
     @include mobile {
       height: 35vh;
       max-height: 35vh;
-      min-height: 220px; // Altura mínima más pequeña
+      min-height: 220px;
     }
   }
 
@@ -290,7 +288,6 @@
   }
 }
 
-// Animaciones adicionales
 @keyframes float {
   0%, 100% {
     transform: translateY(0px);
@@ -304,7 +301,6 @@
   animation: float 3s ease-in-out infinite;
 }
 
-// Ajustes para pantallas muy grandes
 @media (min-width: 1600px) {
   .hero-section {
     &__container {
@@ -322,7 +318,6 @@
   }
 }
 
-// Ajustes para pantallas muy pequeñas (landscape móvil)
 @media (max-height: 500px) and (orientation: landscape) {
   .hero-section {
     height: auto;

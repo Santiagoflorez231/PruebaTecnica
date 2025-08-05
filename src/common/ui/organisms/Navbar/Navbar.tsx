@@ -20,9 +20,9 @@ const Navbar = () => {
   const navItems = [
     { to: '/', label: 'Inicio' },
     { to: '/productos', label: 'Productos' },
-    { to: '/colecciones', label: 'Colecciones' },
-    { to: '/ofertas', label: 'Ofertas' },
-    { to: '/nosotros', label: 'Nosotros' },
+   
+    
+   
   ];
 
   const isActiveLink = (path: string) => location.pathname === path;
@@ -35,92 +35,100 @@ const Navbar = () => {
       transition={{ duration: 0.6, ease: "easeOut" }}
     >
       <nav className="navbar__container">
-        <motion.div
-          className="navbar__brand"
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.95 }}
-        >
-          <Link to="/" className="navbar__logo">
-            <span className="navbar__logo-text">StyleStore</span>
-            <span className="navbar__logo-dot">.</span>
-          </Link>
-        </motion.div>
+        {/* Sección izquierda: Logo + Navegación */}
+        <div className="navbar__left-section">
+          {/* Logo/Brand */}
+          <motion.div
+            className="navbar__brand"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+          >
+            <Link to="/" className="navbar__logo">
+              <span className="navbar__logo-text">StyleStore</span>
+              <span className="navbar__logo-dot">.</span>
+            </Link>
+          </motion.div>
 
-        <div className="navbar__nav navbar__nav--desktop">
-          <ul className="navbar__menu">
-            {navItems.map((item, index) => (
-              <motion.li
-                key={item.to}
-                className="navbar__item"
-                initial={{ opacity: 0, y: -20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: index * 0.1 + 0.3 }}
-              >
-                <Link
-                  to={item.to}
-                  className={`navbar__link ${isActiveLink(item.to) ? 'navbar__link--active' : ''}`}
+          {/* Desktop Navigation */}
+          <div className="navbar__nav navbar__nav--desktop">
+            <ul className="navbar__menu">
+              {navItems.map((item, index) => (
+                <motion.li
+                  key={item.to}
+                  className="navbar__item"
+                  initial={{ opacity: 0, y: -20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: index * 0.1 + 0.3 }}
                 >
-                  {item.label}
-                  {isActiveLink(item.to) && (
-                    <motion.div
-                      className="navbar__link-indicator"
-                      layoutId="activeIndicator"
-                      transition={{ type: "spring", stiffness: 500, damping: 30 }}
-                    />
-                  )}
-                </Link>
-              </motion.li>
-            ))}
-          </ul>
+                  <Link
+                    to={item.to}
+                    className={`navbar__link ${isActiveLink(item.to) ? 'navbar__link--active' : ''}`}
+                  >
+                    {item.label}
+                    {isActiveLink(item.to) && (
+                      <motion.div
+                        className="navbar__link-indicator"
+                        layoutId="activeIndicator"
+                        transition={{ type: "spring", stiffness: 500, damping: 30 }}
+                      />
+                    )}
+                  </Link>
+                </motion.li>
+              ))}
+            </ul>
+          </div>
         </div>
 
-        <motion.div
-          className="navbar__actions"
-          initial={{ opacity: 0, x: 20 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ delay: 0.6 }}
-        >
-          <Link to="/login" className="navbar__cta">
-            <motion.button
-              className="btn btn--primary btn--sm"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              Ingresar
-            </motion.button>
-          </Link>
-        </motion.div>
-
-        <motion.button
-          className="navbar__toggle"
-          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          whileTap={{ scale: 0.9 }}
-          aria-label="Toggle mobile menu"
-        >
+        {/* Sección derecha: CTA + Toggle */}
+        <div className="navbar__right-section">
           <motion.div
-            className="navbar__hamburger"
-            animate={isMobileMenuOpen ? "open" : "closed"}
+            className="navbar__actions"
+            initial={{ opacity: 0, x: 20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ delay: 0.6 }}
           >
-            <motion.span
-              variants={{
-                closed: { rotate: 0, y: 0 },
-                open: { rotate: 45, y: 8 }
-              }}
-            />
-            <motion.span
-              variants={{
-                closed: { opacity: 1 },
-                open: { opacity: 0 }
-              }}
-            />
-            <motion.span
-              variants={{
-                closed: { rotate: 0, y: 0 },
-                open: { rotate: -45, y: -8 }
-              }}
-            />
+            <Link to="/login" className="navbar__cta">
+              <motion.button
+                className="btn btn--primary btn--sm"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                Ingresar
+              </motion.button>
+            </Link>
           </motion.div>
-        </motion.button>
+
+          <motion.button
+            className="navbar__toggle"
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            whileTap={{ scale: 0.9 }}
+            aria-label="Toggle mobile menu"
+          >
+            <motion.div
+              className="navbar__hamburger"
+              animate={isMobileMenuOpen ? "open" : "closed"}
+            >
+              <motion.span
+                variants={{
+                  closed: { rotate: 0, y: 0 },
+                  open: { rotate: 45, y: 8 }
+                }}
+              />
+              <motion.span
+                variants={{
+                  closed: { opacity: 1 },
+                  open: { opacity: 0 }
+                }}
+              />
+              <motion.span
+                variants={{
+                  closed: { rotate: 0, y: 0 },
+                  open: { rotate: -45, y: -8 }
+                }}
+              />
+            </motion.div>
+          </motion.button>
+        </div>
       </nav>
 
       <motion.div
