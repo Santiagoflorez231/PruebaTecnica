@@ -19,14 +19,12 @@ const ProductCard = ({ product }: ProductCardProps) => {
     setCurrentImageIndex(newIndex);
   };
 
-  // Formatear precio a pesos colombianos
   const formattedPrice = new Intl.NumberFormat('es-CO', {
     style: 'currency',
     currency: 'COP',
     minimumFractionDigits: 0
   }).format(product.price);
 
-  // Formatear precio original si existe
   const formattedListPrice = product.listPrice && product.listPrice > product.price ? 
     new Intl.NumberFormat('es-CO', {
       style: 'currency',
@@ -47,7 +45,6 @@ const ProductCard = ({ product }: ProductCardProps) => {
       `${product.description.substring(0, 35)}...` : 
       product.description);
 
-  // Imagen actual
   const currentImage = product.images?.[currentImageIndex] || product.image;
 
   return (
@@ -81,7 +78,6 @@ const ProductCard = ({ product }: ProductCardProps) => {
         </div>
       </div>
 
-      {/* Imagen del producto */}
       <div className="product-card__image-container">
         <img
           src={currentImage}
@@ -90,7 +86,6 @@ const ProductCard = ({ product }: ProductCardProps) => {
         />
       </div>
 
-      {/* Navegación inferior */}
       <div className="product-card__navigation">
         <div className="product-card__counter">
           <span className="product-card__current">{currentImageIndex + 1}</span>

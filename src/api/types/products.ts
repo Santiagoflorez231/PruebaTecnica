@@ -1,4 +1,3 @@
-// Estructura real de la API de Vélez
 export interface Product {
   productId: string;
   productName: string;
@@ -21,7 +20,6 @@ export interface Product {
   image: string;
 }
 
-// Para compatibilidad con el componente ProductCard existente
 export interface ProductDisplay {
   id: string;
   name: string;
@@ -45,7 +43,6 @@ export interface ColorVariant {
   images?: string[];
 }
 
-// La API devuelve directamente un array de productos
 export type ProductsResponse = Product[];
 
 export interface ProductsQueryParams {
