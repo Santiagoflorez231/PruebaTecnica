@@ -3,7 +3,7 @@
 
 .catalog-grid-section {
   padding: $spacing-20 0;
-  background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 50%, #e2e8f0 100%);
+  background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
   position: relative;
   overflow: hidden;
 
@@ -14,15 +14,15 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background: 
-      radial-gradient(circle at 20% 50%, rgba(59, 130, 246, 0.05) 0%, transparent 50%),
-      radial-gradient(circle at 80% 20%, rgba(168, 85, 247, 0.04) 0%, transparent 50%);
+    background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23e2e8f0' fill-opacity='0.3'%3E%3Cpath d='m36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E") repeat;
+    opacity: 0.5;
+    z-index: 1;
     pointer-events: none;
   }
 
   .container {
     position: relative;
-    z-index: 1;
+    z-index: 2;
   }
 }
 
@@ -66,12 +66,12 @@
   }
 
   &__text-card {
-    background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+    background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
     display: flex;
     align-items: center;
     justify-content: center;
     padding: $spacing-6;
-    border: 2px solid rgba(255, 255, 255, 0.8);
+    border: 1px solid rgba(226, 232, 240, 0.8);
     backdrop-filter: blur(10px);
 
     @include mobile {
@@ -84,20 +84,42 @@
     max-width: 100%;
   }
 
+  &__category {
+    color: #6b7280;
+    font-size: $font-size-sm;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: $spacing-2;
+    font-family: 'Inter', sans-serif;
+  }
+
   &__title {
+    font-family: 'Poppins', sans-serif;
     font-size: clamp(1.75rem, 3vw, 2.5rem);
-    font-weight: 800;
-    color: $text-primary;
+    font-weight: 700;
+    line-height: 1.1;
+    color: #1a1a1a;
     margin-bottom: $spacing-3;
-    line-height: 1.2;
-    background: linear-gradient(135deg, #1e293b 0%, #3b82f6 100%);
+    background: linear-gradient(135deg, #1a1a1a 0%, #374151 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+
+    @include mobile {
+      font-size: clamp(1.5rem, 5vw, 2rem);
+      margin-bottom: $spacing-2;
+    }
   }
 
   &__subtitle {
-    font-size: $font-size-sm;
+    font-family: 'Poppins', sans-serif;
+    font-size: clamp(0.9rem, 1.5vw, 1rem);
+    font-weight: 500;
+    color: #6b7280;
+    line-height: 1.5;
+    max-width: 280px;
+    margin: 0 auto;
     color: $text-secondary;
     margin-bottom: $spacing-4;
     line-height: 1.5;
@@ -311,6 +333,89 @@
     &:nth-child(3) { width: 60%; }
     &:nth-child(4) { width: 40%; }
     &:nth-child(5) { width: 20%; }
+  }
+
+  &__cta-card {
+    background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: $spacing-6;
+    border: 1px solid rgba(226, 232, 240, 0.8);
+    backdrop-filter: blur(10px);
+
+    @include mobile {
+      padding: $spacing-4;
+    }
+  }
+
+  &__cta-content {
+    text-align: center;
+    max-width: 100%;
+  }
+
+  &__cta-title {
+    font-family: 'Poppins', sans-serif;
+    font-size: clamp(1.25rem, 2.5vw, 1.75rem);
+    font-weight: 700;
+    line-height: 1.1;
+    color: #1a1a1a;
+    margin-bottom: $spacing-3;
+    background: linear-gradient(135deg, #1a1a1a 0%, #374151 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+
+    @include mobile {
+      font-size: clamp(1.1rem, 4vw, 1.5rem);
+      margin-bottom: $spacing-2;
+    }
+  }
+
+  &__cta-description {
+    font-family: 'Poppins', sans-serif;
+    font-size: clamp(0.85rem, 1.2vw, 0.95rem);
+    font-weight: 500;
+    color: #6b7280;
+    line-height: 1.4;
+    margin-bottom: $spacing-4;
+    max-width: 220px;
+    margin-left: auto;
+    margin-right: auto;
+
+    @include mobile {
+      max-width: 100%;
+      margin-bottom: $spacing-3;
+    }
+  }
+
+  &__cta-button {
+    background: linear-gradient(135deg, #1a1a1a 0%, #374151 100%);
+    color: white;
+    padding: $spacing-3 $spacing-6;
+    border-radius: $border-radius-lg;
+    font-weight: 600;
+    font-size: $font-size-sm;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 6px 20px rgba(26, 26, 26, 0.25);
+    font-family: 'Poppins', sans-serif;
+    
+    &:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 8px 25px rgba(26, 26, 26, 0.35);
+    }
+
+    &:active {
+      transform: translateY(0);
+    }
+
+    @include mobile {
+      padding: $spacing-2 $spacing-4;
+      font-size: $font-size-xs;
+      width: 100%;
+    }
   }
 }
 
