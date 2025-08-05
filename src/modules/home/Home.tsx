@@ -9,14 +9,14 @@ import HeroSection from '@/common/ui/molecules/HeroSection';
 import FeaturesWidget from '@/common/ui/widgets/FeaturesWidget';
 
 const Home = () => {
+  const handleHeroCtaClick = (slideId: number) => {
+    console.log(`Navegando a producto/colección ${slideId}`);
+    // Aquí podrías navegar a una página específica según el slide
+  };
+
   return (
     <>
-      <HeroSection 
-        title="Bienvenido a Mi Aplicación"
-        subtitle="Una aplicación moderna construida con React y arquitectura atómica"
-        ctaText="Comenzar"
-        onCtaClick={() => console.log('CTA clicked')}
-      />
+      <HeroSection onCtaClick={handleHeroCtaClick} />
 
       <FeaturesWidget />
 
