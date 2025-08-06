@@ -3,59 +3,38 @@ import { useState } from 'react';
 import { useProducts } from '@/api/queries/products';
 import ProductCard from '@/common/ui/molecules/ProductCard';
 import Title from '@/common/ui/atoms/Title';
-import Button from '@/common/ui/atoms/Button';
 import './Products.scss';
 
 const Products = () => {
-  const [selectedCategory, setSelectedCategory] = useState('all');
-  const [sortBy, setSortBy] = useState('featured');
   const [currentPage, setCurrentPage] = useState(1);
-  const itemsPerPage = 12;
+  const productsPerPage = 6;
 
   const { 
-    data: products = [], 
+    data: allProducts = [], 
     isLoading, 
     error 
-  } = useProducts({ 
-    limit: currentPage * itemsPerPage,
-    sort: sortBy === 'featured' ? 'name' : sortBy.includes('price') ? 'price' : 'name',
-    order: sortBy === 'price-high' ? 'desc' : 'asc'
-  });
+  } = useProducts({});
 
-  // Extraer categorías reales de los productos de la API
-  const categories = [
-    { id: 'all', name: 'Todos los Productos' },
-    ...Array.from(new Set(products.map(p => p.brand).filter(Boolean)))
-      .map(brand => ({ id: brand, name: brand }))
-  ];
+  // Paginación manual (porque la API no respeta el limit)
+  const totalPages = Math.ceil(allProducts.length / productsPerPage);
+  const startIndex = (currentPage - 1) * productsPerPage;
+  const endIndex = startIndex + productsPerPage;
+  const products = allProducts.slice(startIndex, endIndex);
 
-  const sortOptions = [
-    { id: 'featured', name: 'Destacados' },
-    { id: 'price-low', name: 'Precio: Menor a Mayor' },
-    { id: 'price-high', name: 'Precio: Mayor a Menor' },
-    { id: 'newest', name: 'Más Recientes' }
-  ];
-
-  // Filtrar productos por categoría usando solo datos reales
-  const filteredProducts = selectedCategory === 'all' 
-    ? products 
-    : products.filter(product => product.brand === selectedCategory);
-
-  // Solo ordenar si es necesario (la API ya puede manejar el ordenamiento)
-  const sortedProducts = [...filteredProducts];
-
-  const handleLoadMore = () => {
-    setCurrentPage(prev => prev + 1);
+  const goToPage = (page: number) => {
+    setCurrentPage(page);
   };
 
-  const handleCategoryChange = (categoryId: string) => {
-    setSelectedCategory(categoryId);
-    setCurrentPage(1); // Reset página al cambiar categoría
+  const goToPrevious = () => {
+    if (currentPage > 1) {
+      setCurrentPage(currentPage - 1);
+    }
   };
 
-  const handleSortChange = (newSortBy: string) => {
-    setSortBy(newSortBy);
-    setCurrentPage(1); // Reset página al cambiar ordenamiento
+  const goToNext = () => {
+    if (currentPage < totalPages) {
+      setCurrentPage(currentPage + 1);
+    }
   };
 
   const containerVariants = {
@@ -89,7 +68,6 @@ const Products = () => {
 
   return (
     <div className="products-page">
-      {/* Hero Section */}
       <section className="products-hero">
         <div className="container">
           <motion.div
@@ -121,58 +99,9 @@ const Products = () => {
         </div>
       </section>
 
-      {/* Filters Section */}
-      <section className="products-filters">
-        <div className="container">
-          <div className="products-filters__content">
-            {/* Category Filters */}
-            <div className="products-filters__categories">
-              {categories.map((category) => (
-                <motion.button
-                  key={category.id}
-                  className={`products-filters__category ${
-                    selectedCategory === category.id ? 'active' : ''
-                  }`}
-                  onClick={() => handleCategoryChange(category.id)}
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                >
-                  {category.name}
-                </motion.button>
-              ))}
-            </div>
-
-            {/* Sort Options */}
-            <div className="products-filters__sort">
-              <select
-                value={sortBy}
-                onChange={(e) => handleSortChange(e.target.value)}
-                className="products-filters__select"
-              >
-                {sortOptions.map((option) => (
-                  <option key={option.id} value={option.id}>
-                    {option.name}
-                  </option>
-                ))}
-              </select>
-            </div>
-
-            {/* Results Count */}
-            <div className="products-filters__count">
-              {isLoading ? (
-                <span>Cargando...</span>
-              ) : (
-                <span>{sortedProducts.length} productos encontrados</span>
-              )}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Products Grid */}
       <section className="products-grid-section">
         <div className="container">
-          {isLoading && currentPage === 1 ? (
+          {isLoading ? (
             <div className="products-loading">
               <motion.div
                 initial={{ opacity: 0 }}
@@ -183,56 +112,65 @@ const Products = () => {
               </motion.div>
             </div>
           ) : (
-            <>
-              <motion.div
-                className="products-grid"
-                variants={containerVariants}
-                initial="hidden"
-                animate="visible"
-              >
-                {sortedProducts.map((product) => (
-                  <motion.div
-                    key={product.id}
-                    variants={itemVariants}
-                    layout
-                    className="products-grid__item"
-                  >
-                    <ProductCard product={product} />
-                  </motion.div>
-                ))}
-              </motion.div>
-
-              {/* No results message */}
-              {sortedProducts.length === 0 && !isLoading && (
-                <div className="products-no-results">
-                  <h3>No se encontraron productos</h3>
-                  <p>Intenta ajustar los filtros de búsqueda</p>
-                </div>
-              )}
-            </>
+            <motion.div
+              className="products-grid"
+              variants={containerVariants}
+              initial="hidden"
+              animate="visible"
+            >
+              {products.map((product) => (
+                <motion.div
+                  key={product.id}
+                  variants={itemVariants}
+                  layout
+                  className="products-grid__item"
+                >
+                  <ProductCard product={product} />
+                </motion.div>
+              ))}
+            </motion.div>
           )}
         </div>
       </section>
 
-      {/* Load More Section */}
-      {sortedProducts.length > 0 && sortedProducts.length >= currentPage * itemsPerPage && (
-        <section className="products-load-more">
+      {/* Paginación */}
+      {totalPages > 1 && (
+        <section className="products-pagination">
           <div className="container">
-            <div className="products-load-more__content">
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6 }}
+            <div className="pagination">
+              <button 
+                onClick={goToPrevious}
+                disabled={currentPage === 1}
+                className="pagination__btn pagination__btn--prev"
               >
-                <Button 
-                  variant="secondary"
-                  className="products-load-more__button"
-                  onClick={handleLoadMore}
-                  disabled={isLoading}
-                >
-                  {isLoading ? 'Cargando...' : 'Ver Más Productos'}
-                </Button>
-              </motion.div>
+                ← Anterior
+              </button>
+              
+              <div className="pagination__numbers">
+                {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
+                  <button
+                    key={page}
+                    onClick={() => goToPage(page)}
+                    className={`pagination__number ${currentPage === page ? 'active' : ''}`}
+                  >
+                    {page}
+                  </button>
+                ))}
+              </div>
+              
+              <button 
+                onClick={goToNext}
+                disabled={currentPage === totalPages}
+                className="pagination__btn pagination__btn--next"
+              >
+                Siguiente →
+              </button>
+            </div>
+            
+            <div className="pagination__info">
+              <p>
+                Mostrando {startIndex + 1}-{Math.min(endIndex, allProducts.length)} de {allProducts.length} productos
+              </p>
             </div>
           </div>
         </section>
