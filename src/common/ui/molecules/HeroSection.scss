@@ -40,13 +40,21 @@
     height: calc(100vh - 100px);
     padding: 0;
 
-    @include tablet {
-      grid-template-columns: 1fr;
+    @media (min-width: 768px) and (max-width: 1023px) {
+      grid-template-columns: 1fr 1fr;
       gap: $spacing-8;
+      padding: $spacing-4;
+      height: auto;
+      min-height: 80vh;
+    }
+
+    @media (min-width: 640px) and (max-width: 767px) {
+      grid-template-columns: 1fr;
+      gap: $spacing-6;
       text-align: center;
       height: auto;
-      min-height: calc(100vh - 90px);
-      padding: $spacing-4 0;
+      min-height: auto;
+      padding: $spacing-6 $spacing-4;
     }
 
     @include mobile {
@@ -61,15 +69,20 @@
     position: relative;
     z-index: 3;
 
-    @include tablet {
-      order: 2;
+    @media (min-width: 640px) and (max-width: 767px) {
+      order: 1; 
     }
   }
 
   &__text {
     max-width: 600px;
 
-    @include tablet {
+    @media (min-width: 640px) and (max-width: 767px) {
+      max-width: 100%;
+      margin: 0 auto;
+    }
+
+    @include mobile {
       max-width: 100%;
       margin: 0 auto;
     }
@@ -172,7 +185,7 @@
     align-items: center;
     margin-bottom: $spacing-4; 
 
-    @include tablet {
+    @media (min-width: 640px) and (max-width: 767px) {
       justify-content: center; 
     }
 
@@ -202,7 +215,7 @@
       box-shadow: 0 12px 35px rgba(26, 26, 26, 0.4);
     }
 
-    @include tablet {
+    @media (min-width: 640px) and (max-width: 767px) {
       margin: 0 auto; 
     }
 
@@ -221,7 +234,7 @@
     gap: $spacing-3;
     margin-top: $spacing-4;
 
-    @include tablet {
+    @media (min-width: 640px) and (max-width: 767px) {
       justify-content: center;
     }
 
@@ -260,10 +273,17 @@
     position: relative;
     height: 100%; 
     max-height: calc(100vh - 140px); 
-    @include tablet {
-      order: 1;
-      height: 45vh; 
-      max-height: 45vh;
+    
+    @media (min-width: 768px) and (max-width: 1023px) {
+      height: 60vh;
+      max-height: 60vh;
+    }
+
+    @media (min-width: 640px) and (max-width: 767px) {
+      order: 2; 
+      height: 50vh; 
+      max-height: 50vh;
+      margin-top: $spacing-4;
     }
 
     @include mobile {
@@ -271,6 +291,7 @@
       max-height: 300px;
       min-height: 250px;
       margin-bottom: $spacing-4;
+      margin-top: 0;
     }
   }
 
