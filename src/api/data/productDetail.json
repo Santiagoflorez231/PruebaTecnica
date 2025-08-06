@@ -1,0 +1,178 @@
+[
+  {
+    "productId": "125829257",
+    "productName": "Tenis Fly Up Surfer 2.0 en textil y cuero para hombre low top",
+    "brand": "FLYUP",
+    "brandId": 2000003,
+    "brandImageUrl": null,
+    "linkText": "tenis-1037823-00",
+    "productReference": "103782300",
+    "productReferenceCode": "103782300",
+    "categoryId": "162",
+    "productTitle": "Tenis | FLYUP",
+    "metaTagDescription": "De diseño auténtico y aerodinámico, nuestros Fly Up sintetizan la moda y la función para brindarte confort. Fabricados con maestría, presentan una estética moderna que captura la esencia del estilo urbano. Su mezcla de textil, cuero gamuzado y cuero liso ofrece durabilidad y una silueta atemporal perfecta para crear estilismos casuales o deportivos, ideales para el hombre dinámico que busca llevar su estilo al siguiente nivel.",
+    "description": "De diseño auténtico y aerodinámico, nuestros Fly Up sintetizan la moda y la función para brindarte confort. Fabricados con maestría, presentan una estética moderna que captura la esencia del estilo urbano. Su mezcla de textil, cuero gamuzado y cuero liso ofrece durabilidad y una silueta atemporal perfecta para crear estilismos casuales o deportivos, ideales para el hombre dinámico que busca llevar su estilo al siguiente nivel.",
+    "categories": [
+      "/Flyup/Hombre/Tenis/",
+      "/Flyup/Hombre/",
+      "/Flyup/",
+      "/hombre/",
+      "/hombre/Zapatos/",
+      "/hombre/Zapatos/Tenis/"
+    ],
+    "PAÍS DE ORIGEN": ["Colombia"],
+    "COMPOSICIÓN": ["Parte Superior: 50% Poliester, 50% Cuero Bovino | Suela: 100% Caucho | Forro: 100% Poliester | Plantilla: 100% Poliester"],
+    "CARACTERÍSTICAS": ["- Sneaker tipo low top <br>- Elaborados en textil, cuero tipo carnaza y cuero liso <br>- Forro en textil <br>- Suela liviana en caucho <br>- Detalle lateral en TPU <br>- Plantilla anatómica <br>- Detalles de color en la marcación, reatas y doble lengüeta <br>- Cordón plano de algodón con puntera plástica en contraste"],
+    "INSTRUCCIONES DE CUIDADO": ["Después del uso dejar reposar en un lugar fresco antes de guardar. Evitar la exposición prolongada a la luz solar para evitar deshidratación y decoloración en los materiales. No usar detergentes, blanqueadores, disolventes o productos abrasivos. No sumergir en agua. No usar lavadora. Limpiar con Leather Cleaner con un paño de algodón o con un cepillo de cerdas suaves y remover el producto cuidadosamente. Secar al aire y a la sombra. No guardar el producto húmedo. Se recomienda guardar el producto en una funda de tela. Con el uso y paso del tiempo el producto puede presentar variaciones en su apariencia."],
+    "items": [
+      {
+        "itemId": "663355339",
+        "name": "Tenis Fly Up Surfer 2.0 en textil y cuero para hombre low top Negro 40",
+        "nameComplete": "Tenis Fly Up Surfer 2.0 en textil y cuero para hombre low top Negro 40",
+        "ean": "7705007453165",
+        "images": [
+          {
+            "imageId": "277767",
+            "imageLabel": "1",
+            "imageTag": "<img src=\"~/arquivos/ids/277767-#width#-#height#/1037823-00-01-Tenis-de-cuero.jpg?v=638557041976600000\" width=\"#width#\" height=\"#height#\" alt=\"Tenis-de-cuero\" id=\"\" />",
+            "imageUrl": "https://cuerosvelezco.vteximg.com.br/arquivos/ids/277767/1037823-00-01-Tenis-de-cuero.jpg?v=638557041976600000",
+            "imageText": "Tenis-de-cuero",
+            "imageLastModified": "2024-07-04T15:36:37.6600000Z"
+          },
+          {
+            "imageId": "277768",
+            "imageLabel": "2",
+            "imageTag": "<img src=\"~/arquivos/ids/277768-#width#-#height#/1037823-00-02-Tenis-de-cuero.jpg?v=638557042082600000\" width=\"#width#\" height=\"#height#\" alt=\"Tenis-de-cuero\" id=\"\" />",
+            "imageUrl": "https://cuerosvelezco.vteximg.com.br/arquivos/ids/277768/1037823-00-02-Tenis-de-cuero.jpg?v=638557042082600000",
+            "imageText": "Tenis-de-cuero",
+            "imageLastModified": "2024-07-04T15:36:48.2600000Z"
+          },
+          {
+            "imageId": "277769",
+            "imageLabel": "3",
+            "imageTag": "<img src=\"~/arquivos/ids/277769-#width#-#height#/1037823-00-03-Tenis-de-cuero.jpg?v=638557042240400000\" width=\"#width#\" height=\"#height#\" alt=\"Tenis-de-cuero\" id=\"\" />",
+            "imageUrl": "https://cuerosvelezco.vteximg.com.br/arquivos/ids/277769/1037823-00-03-Tenis-de-cuero.jpg?v=638557042240400000",
+            "imageText": "Tenis-de-cuero",
+            "imageLastModified": "2024-07-04T15:37:04.0400000Z"
+          },
+          {
+            "imageId": "277770",
+            "imageLabel": "4",
+            "imageTag": "<img src=\"~/arquivos/ids/277770-#width#-#height#/1037823-00-04-Tenis-de-cuero.jpg?v=638557042352900000\" width=\"#width#\" height=\"#height#\" alt=\"Tenis-de-cuero\" id=\"\" />",
+            "imageUrl": "https://cuerosvelezco.vteximg.com.br/arquivos/ids/277770/1037823-00-04-Tenis-de-cuero.jpg?v=638557042352900000",
+            "imageText": "Tenis-de-cuero",
+            "imageLastModified": "2024-07-04T15:37:15.2900000Z"
+          }
+        ],
+        "Color": ["Negro"],
+        "Talla": ["40"],
+        "variations": ["Color", "Talla"],
+        "sellers": [
+          {
+            "sellerId": "1",
+            "sellerName": "VÉLEZ",
+            "addToCartLink": "https://cuerosvelezco.myvtex.com/checkout/cart/add?sku=663355339&qty=1&seller=1&sc=1&price=39990000&cv=_&sc=1",
+            "sellerDefault": true,
+            "commertialOffer": {
+              "Price": 399900,
+              "ListPrice": 399900,
+              "PriceWithoutDiscount": 399900,
+              "FullSellingPrice": 399900,
+              "AvailableQuantity": 0,
+              "IsAvailable": false,
+              "GetInfoErrorMessage": "El ítem no tiene inventario",
+              "PaymentOptions": {
+                "installmentOptions": [],
+                "paymentSystems": []
+              }
+            }
+          }
+        ]
+      },
+      {
+        "itemId": "663355340",
+        "name": "Tenis Fly Up Surfer 2.0 en textil y cuero para hombre low top Negro 41",
+        "nameComplete": "Tenis Fly Up Surfer 2.0 en textil y cuero para hombre low top Negro 41",
+        "ean": "7705007453172",
+        "images": [
+          {
+            "imageId": "277767",
+            "imageLabel": "1",
+            "imageTag": "<img src=\"~/arquivos/ids/277767-#width#-#height#/1037823-00-01-Tenis-de-cuero.jpg?v=638557041976600000\" width=\"#width#\" height=\"#height#\" alt=\"Tenis-de-cuero\" id=\"\" />",
+            "imageUrl": "https://cuerosvelezco.vteximg.com.br/arquivos/ids/277767/1037823-00-01-Tenis-de-cuero.jpg?v=638557041976600000",
+            "imageText": "Tenis-de-cuero",
+            "imageLastModified": "2024-07-04T15:36:37.6600000Z"
+          }
+        ],
+        "Color": ["Negro"],
+        "Talla": ["41"],
+        "variations": ["Color", "Talla"],
+        "sellers": [
+          {
+            "sellerId": "1",
+            "sellerName": "VÉLEZ",
+            "addToCartLink": "https://cuerosvelezco.myvtex.com/checkout/cart/add?sku=663355340&qty=1&seller=1&sc=1&price=39990000&cv=_&sc=1",
+            "sellerDefault": true,
+            "commertialOffer": {
+              "Price": 299900,
+              "ListPrice": 399900,
+              "PriceWithoutDiscount": 399900,
+              "FullSellingPrice": 299900,
+              "AvailableQuantity": 5,
+              "IsAvailable": true,
+              "PaymentOptions": {
+                "installmentOptions": [],
+                "paymentSystems": []
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "skuSpecifications": [
+      {
+        "field": {
+          "id": 87,
+          "name": "Color",
+          "isActive": true,
+          "position": 1,
+          "type": "Radio"
+        },
+        "values": [
+          {
+            "id": "7",
+            "name": "Negro",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "field": {
+          "id": 86,
+          "name": "Talla",
+          "isActive": true,
+          "position": 8,
+          "type": "Radio"
+        },
+        "values": [
+          {
+            "id": "28",
+            "name": "40",
+            "position": 28
+          },
+          {
+            "id": "29",
+            "name": "41",
+            "position": 29
+          }
+        ]
+      }
+    ],
+    "allSpecifications": [
+      "PAÍS DE ORIGEN",
+      "COMPOSICIÓN",
+      "CARACTERÍSTICAS",
+      "INSTRUCCIONES DE CUIDADO"
+    ]
+  }
+]
