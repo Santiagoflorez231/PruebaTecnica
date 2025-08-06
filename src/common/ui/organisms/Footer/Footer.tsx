@@ -1,156 +1,153 @@
-import { motion } from 'framer-motion';
-import { Link } from 'react-router-dom';
-import './Footer.scss';
+"use client"
+
+import { motion } from "framer-motion"
+import { Link } from 'react-router-dom'
+import { Facebook, Twitter, Instagram, Linkedin } from 'lucide-react'
+import './Footer.scss'
 
 const Footer = () => {
-  const currentYear = new Date().getFullYear();
+  const currentYear = new Date().getFullYear()
 
-  const footerLinks = [
-    {
-      title: 'Comprar',
-      links: [
-        { label: 'Mujer', to: '/mujer' },
-        { label: 'Hombre', to: '/hombre' },
-        { label: 'Accesorios', to: '/accesorios' },
-        { label: 'Ofertas', to: '/ofertas' },
-      ]
-    },
-    {
-      title: 'Ayuda',
-      links: [
-        { label: 'Guía de Tallas', to: '/guia-tallas' },
-        { label: 'Envíos', to: '/envios' },
-        { label: 'Devoluciones', to: '/devoluciones' },
-        { label: 'Contacto', to: '/contacto' },
-      ]
-    },
-    {
-      title: 'Empresa',
-      links: [
-        { label: 'Nosotros', to: '/nosotros' },
-        { label: 'Sustentabilidad', to: '/sustentabilidad' },
-        { label: 'Trabaja con nosotros', to: '/empleos' },
-        { label: 'Prensa', to: '/prensa' },
-      ]
-    }
-  ];
+  const shopLinks = [
+    { label: 'Mujer', href: '/productos' },
+    { label: 'Hombre', href: '/productos' },
+    { label: 'Ofertas', href: '/productos' },
+    { label: 'Nuevos', href: '/productos' },
+  ]
 
   const socialLinks = [
-    { name: 'Instagram', icon: '📷', url: '#' },
-    { name: 'Facebook', icon: '📘', url: '#' },
-    { name: 'Pinterest', icon: '�', url: '#' },
-    { name: 'TikTok', icon: '🎵', url: '#' },
-  ];
+    { icon: Facebook, href: '#', label: 'Facebook' },
+    { icon: Twitter, href: '#', label: 'Twitter' },
+    { icon: Instagram, href: '#', label: 'Instagram' },
+    { icon: Linkedin, href: '#', label: 'LinkedIn' },
+  ]
 
   return (
     <motion.footer
       className="footer"
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
-      transition={{ duration: 0.6 }}
+      transition={{ duration: 0.8 }}
       viewport={{ once: true }}
     >
       <div className="footer__container">
-        {/* Main Footer Content */}
         <div className="footer__content">
-          {/* Brand Section */}
+          
           <motion.div
             className="footer__brand"
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.1 }}
+            transition={{ delay: 0.1, duration: 0.6 }}
             viewport={{ once: true }}
           >
             <Link to="/" className="footer__logo">
-              <span className="footer__logo-text">StyleStore</span>
-              <span className="footer__logo-dot">.</span>
+              <span className="footer__logo-text">
+                StyleStore
+              </span>
+              <motion.span
+                className="footer__logo-dot"
+                animate={{ opacity: [1, 0.5, 1] }}
+                transition={{ duration: 2, repeat: Infinity }}
+              >
+                .
+              </motion.span>
             </Link>
+            
             <p className="footer__description">
-              Descubre las últimas tendencias en moda. Calidad, estilo y elegancia en cada prenda para expresar tu personalidad única.
+              Moda moderna y elegante para tu estilo único. Calidad premium en cada prenda.
             </p>
+
             <div className="footer__social">
               {socialLinks.map((social, index) => (
                 <motion.a
-                  key={social.name}
-                  href={social.url}
+                  key={social.label}
+                  href={social.href}
                   className="footer__social-link"
                   whileHover={{ scale: 1.1, y: -2 }}
                   whileTap={{ scale: 0.95 }}
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.2 + index * 0.1 }}
+                  transition={{ delay: 0.3 + index * 0.1 }}
                   viewport={{ once: true }}
-                  aria-label={social.name}
+                  aria-label={social.label}
                 >
-                  <span>{social.icon}</span>
+                  <social.icon size={18} />
                 </motion.a>
               ))}
             </div>
           </motion.div>
 
-          {/* Links Sections */}
-          {footerLinks.map((section, sectionIndex) => (
-            <motion.div
-              key={section.title}
-              className="footer__section"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.2 + sectionIndex * 0.1 }}
-              viewport={{ once: true }}
-            >
-              <h3 className="footer__section-title">{section.title}</h3>
-              <ul className="footer__links">
-                {section.links.map((link, linkIndex) => (
-                  <motion.li
-                    key={link.label}
-                    className="footer__link-item"
-                    initial={{ opacity: 0, x: -10 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    transition={{ delay: 0.3 + sectionIndex * 0.1 + linkIndex * 0.05 }}
-                    viewport={{ once: true }}
+          <motion.div
+            className="footer__section"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.2, duration: 0.6 }}
+            viewport={{ once: true }}
+          >
+            <h3 className="footer__section-title">
+              Comprar
+            </h3>
+            
+            <ul className="footer__links">
+              {shopLinks.map((link, linkIndex) => (
+                <motion.li
+                  key={link.label}
+                  className="footer__link-item"
+                  initial={{ opacity: 0, x: -20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  transition={{ delay: 0.3 + linkIndex * 0.1 }}
+                  viewport={{ once: true }}
+                >
+                  <Link
+                    to={link.href}
+                    className="footer__link"
                   >
-                    <Link
-                      to={link.to}
-                      className="footer__link"
+                    <motion.span
+                      whileHover={{ x: 4 }}
                     >
                       {link.label}
-                    </Link>
-                  </motion.li>
-                ))}
-              </ul>
-            </motion.div>
-          ))}
+                    </motion.span>
+                  </Link>
+                </motion.li>
+              ))}
+            </ul>
+          </motion.div>
         </div>
-
-     
 
         <motion.div
           className="footer__bottom"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
-          transition={{ delay: 0.6 }}
+          transition={{ delay: 0.6, duration: 0.6 }}
           viewport={{ once: true }}
         >
           <div className="footer__bottom-content">
             <p className="footer__copyright">
               © {currentYear} StyleStore. Todos los derechos reservados.
             </p>
+            
             <div className="footer__legal">
-              <Link to="/privacy" className="footer__legal-link">
-                Privacidad
-              </Link>
-              <Link to="/terms" className="footer__legal-link">
-                Términos
-              </Link>
-              <Link to="/cookies" className="footer__legal-link">
-                Cookies
-              </Link>
+              <motion.button
+                onClick={() => {}}
+                className="footer__legal-link"
+                whileHover={{ y: -1 }}
+              >
+                Política de Privacidad
+              </motion.button>
+              <span className="footer__separator">|</span>
+              <motion.button
+                onClick={() => {}}
+                className="footer__legal-link"
+                whileHover={{ y: -1 }}
+              >
+                Términos y Condiciones
+              </motion.button>
             </div>
           </div>
         </motion.div>
       </div>
     </motion.footer>
-  );
-};
+  )
+}
 
-export default Footer;
+export default Footer

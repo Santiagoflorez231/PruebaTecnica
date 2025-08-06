@@ -3,7 +3,7 @@
 @import '../../styles/abstracts/mixins';
 
 .modern-layout {
-  min-height: 100vh;
+  min-height: 110vh;
   display: flex;
   flex-direction: column;
   background: linear-gradient(135deg, $bg-secondary 0%, color.adjust($bg-secondary, $lightness: 2%) 100%);

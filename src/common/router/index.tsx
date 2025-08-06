@@ -1,5 +1,6 @@
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import { Suspense, lazy } from 'react';
+import ScrollToTop from '@/common/ui/atoms/ScrollToTop';
 
 const LoadingSpinner = () => (
   <div className="flex items-center justify-center h-screen">
@@ -17,6 +18,7 @@ const ModernLayout = lazy(() => import('@/layouts/ModernLayout'));
 const AppRouter = () => {
   return (
     <Router>
+      <ScrollToTop />
       <Suspense fallback={<LoadingSpinner />}>
         <Routes>
           <Route path="/login" element={<Login />} />
