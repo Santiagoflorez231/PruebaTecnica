@@ -10,13 +10,17 @@ const ProductCard = ({ product }: ProductCardProps) => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   const nextImage = () => {
-    const newIndex = currentImageIndex < product.images.length - 1 ? currentImageIndex + 1 : 0;
-    setCurrentImageIndex(newIndex);
+    if (product.images && product.images.length > 1) {
+      const newIndex = currentImageIndex < product.images.length - 1 ? currentImageIndex + 1 : 0;
+      setCurrentImageIndex(newIndex);
+    }
   };
 
   const prevImage = () => {
-    const newIndex = currentImageIndex > 0 ? currentImageIndex - 1 : product.images.length - 1;
-    setCurrentImageIndex(newIndex);
+    if (product.images && product.images.length > 1) {
+      const newIndex = currentImageIndex > 0 ? currentImageIndex - 1 : product.images.length - 1;
+      setCurrentImageIndex(newIndex);
+    }
   };
 
   const formattedPrice = new Intl.NumberFormat('es-CO', {
@@ -35,24 +39,54 @@ const ProductCard = ({ product }: ProductCardProps) => {
   const discount = formattedListPrice && product.listPrice ? 
     Math.round(((product.listPrice - product.price) / product.listPrice) * 100) : null;
 
-  const additionalColors = product.color_variants ? product.color_variants.length - 1 : 0;
-
-  const shortDescription = product.brand ? 
-    `${product.brand} - ${product.description?.length > 25 ? 
-      `${product.description.substring(0, 25)}...` : 
-      product.description}` :
-    (product.description?.length > 35 ? 
-      `${product.description.substring(0, 35)}...` : 
-      product.description);
-
+  // Imagen actual a mostrar
   const currentImage = product.images?.[currentImageIndex] || product.image;
 
   return (
     <div className="product-card">
-      <div className="product-card__header">
-        <div className="product-card__info">
+      <div className="product-card__image-container">
+        <img
+          src={currentImage}
+          alt={product.name}
+          className="product-card__image"
+        />
+        
+        {/* Controles de navegación de imágenes */}
+        {product.images && product.images.length > 1 && (
+          <div className="product-card__image-nav">
+            <button
+              className="product-card__nav-btn product-card__nav-btn--prev"
+              onClick={prevImage}
+              aria-label="Imagen anterior"
+            >
+              ←
+            </button>
+            <button
+              className="product-card__nav-btn product-card__nav-btn--next"
+              onClick={nextImage}
+              aria-label="Siguiente imagen"
+            >
+              →
+            </button>
+          </div>
+        )}
+        
+        {/* Indicador de imágenes */}
+        {product.images && product.images.length > 1 && (
+          <div className="product-card__image-indicator">
+            {currentImageIndex + 1} / {product.images.length}
+          </div>
+        )}
+      </div>
+
+      <div className="product-card__content">
+        <div className="product-card__header">
+          <div className="product-card__brand">{product.brand}</div>
           <h2 className="product-card__title">{product.name}</h2>
-          <p className="product-card__description">{shortDescription}</p>
+          <p className="product-card__description">{product.description}</p>
+        </div>
+
+        <div className="product-card__footer">
           <div className="product-card__pricing">
             <p className="product-card__price">{formattedPrice}</p>
             {formattedListPrice && (
@@ -62,55 +96,14 @@ const ProductCard = ({ product }: ProductCardProps) => {
               </div>
             )}
           </div>
-        </div>
 
-        <div className="product-card__indicators">
-          {!product.available && (
-            <div className="product-card__out-of-stock">
-              Agotado
-            </div>
-          )}
-          {additionalColors > 0 && (
-            <div className="product-card__colors">
-              <span className="product-card__colors-count">+{additionalColors}</span>
-            </div>
-          )}
-        </div>
-      </div>
-
-      <div className="product-card__image-container">
-        <img
-          src={currentImage}
-          alt={product.name}
-          className="product-card__image"
-        />
-      </div>
-
-      <div className="product-card__navigation">
-        <div className="product-card__counter">
-          <span className="product-card__current">{currentImageIndex + 1}</span>
-          <span className="product-card__divider"> / </span>
-          <span className="product-card__total">{product.images?.length || 1}</span>
-        </div>
-
-        <div className="product-card__controls">
-          <button
-            className="product-card__nav-btn"
-            onClick={prevImage}
-            aria-label="Imagen anterior"
-            disabled={!product.images || product.images.length <= 1}
-          >
-            ←
-          </button>
-          
-          <button
-            className="product-card__nav-btn"
-            onClick={nextImage}
-            aria-label="Siguiente imagen"
-            disabled={!product.images || product.images.length <= 1}
-          >
-            →
-          </button>
+          <div className="product-card__status">
+            {!product.available && (
+              <div className="product-card__availability product-card__availability--unavailable">
+                Agotado
+              </div>
+            )}
+          </div>
         </div>
       </div>
     </div>
