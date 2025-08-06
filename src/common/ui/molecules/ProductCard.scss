@@ -37,7 +37,7 @@
     align-items: center;
     height: 200px;
     margin-bottom: $spacing-4;
-    background: #EFEFEF;
+    background: #EFEFEF; 
     border-radius: $border-radius;
     overflow: hidden;
     position: relative;
@@ -53,7 +53,7 @@
     height: 100%;
     object-fit: contain;
     transition: transform 0.3s ease;
-    background: transparent;
+    background: transparent; // Fondo blanco consistente
 
     &:hover {
       transform: scale(1.02);
@@ -85,8 +85,7 @@
     @include mobile {
       opacity: 1; // Siempre visible en móvil
       pointer-events: all;
-      background: rgba(255, 255, 255, 0.1);
-      backdrop-filter: blur(2px);
+      background: transparent; // Sin fondo en móvil
       padding: $spacing-1 $spacing-2;
     }
   }

@@ -51,7 +51,6 @@ const ProductCard = ({ product }: ProductCardProps) => {
           className="product-card__image"
         />
         
-        {/* Controles de navegación de imágenes */}
         {product.images && product.images.length > 1 && (
           <div className="product-card__image-nav">
             <button
@@ -71,7 +70,6 @@ const ProductCard = ({ product }: ProductCardProps) => {
           </div>
         )}
         
-        {/* Indicador de imágenes */}
         {product.images && product.images.length > 1 && (
           <div className="product-card__image-indicator">
             {currentImageIndex + 1} / {product.images.length}
