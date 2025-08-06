@@ -6,6 +6,8 @@ interface CatalogGridProps {
 }
 
 const CatalogGrid = ({  }: CatalogGridProps) => {
+  const isMobile = window.innerWidth <= 768;
+
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -35,7 +37,7 @@ const CatalogGrid = ({  }: CatalogGridProps) => {
           <motion.div 
             className="catalog-grid__item catalog-grid__text-card"
             variants={itemVariants}
-            whileHover={{ scale: 1.02, transition: { duration: 0.3 } }}
+            whileHover={!isMobile ? { scale: 1.02, transition: { duration: 0.3 } } : {}}
           >
             <div className="catalog-grid__text-content">
               <motion.p 
@@ -69,13 +71,13 @@ const CatalogGrid = ({  }: CatalogGridProps) => {
           <motion.div 
             className="catalog-grid__item catalog-grid__image-card"
             variants={itemVariants}
-            whileHover={{ scale: 1.05, transition: { duration: 0.4 } }}
+            whileHover={!isMobile ? { scale: 1.05, transition: { duration: 0.4 } } : {}}
           >
             <motion.img
               src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=600&h=800&fit=crop&crop=center"
               alt="Ropa elegante en tienda"
               className="catalog-grid__image"
-              whileHover={{ scale: 1.1 }}
+              whileHover={!isMobile ? { scale: 1.1 } : {}}
               transition={{ duration: 0.6 }}
             />
           </motion.div>
@@ -83,13 +85,13 @@ const CatalogGrid = ({  }: CatalogGridProps) => {
           <motion.div 
             className="catalog-grid__item catalog-grid__image-card"
             variants={itemVariants}
-            whileHover={{ scale: 1.05, transition: { duration: 0.4 } }}
+            whileHover={!isMobile ? { scale: 1.05, transition: { duration: 0.4 } } : {}}
           >
             <motion.img
               src="https://images.unsplash.com/photo-1595777457583-95e059d581b8?w=600&h=800&fit=crop&crop=faces"
               alt="Vestidos elegantes"
               className="catalog-grid__image"
-              whileHover={{ scale: 1.1 }}
+              whileHover={!isMobile ? { scale: 1.1 } : {}}
               transition={{ duration: 0.6 }}
             />
           </motion.div>
@@ -97,13 +99,13 @@ const CatalogGrid = ({  }: CatalogGridProps) => {
           <motion.div 
             className="catalog-grid__item catalog-grid__image-card"
             variants={itemVariants}
-            whileHover={{ scale: 1.05, transition: { duration: 0.4 } }}
+            whileHover={!isMobile ? { scale: 1.05, transition: { duration: 0.4 } } : {}}
           >
             <motion.img
               src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=600&h=800&fit=crop&crop=faces"
               alt="Accesorios y moda"
               className="catalog-grid__image"
-              whileHover={{ scale: 1.1 }}
+              whileHover={!isMobile ? { scale: 1.1 } : {}}
               transition={{ duration: 0.6 }}
             />
           </motion.div>
@@ -111,13 +113,13 @@ const CatalogGrid = ({  }: CatalogGridProps) => {
           <motion.div 
             className="catalog-grid__item catalog-grid__image-card"
             variants={itemVariants}
-            whileHover={{ scale: 1.05, transition: { duration: 0.4 } }}
+            whileHover={!isMobile ? { scale: 1.05, transition: { duration: 0.4 } } : {}}
           >
             <motion.img
               src="https://images.unsplash.com/photo-1596755094514-f87e34085b2c?w=600&h=800&fit=crop&crop=faces"
               alt="Ropa casual moderna"
               className="catalog-grid__image"
-              whileHover={{ scale: 1.1 }}
+              whileHover={!isMobile ? { scale: 1.1 } : {}}
               transition={{ duration: 0.6 }}
             />
           </motion.div>
@@ -125,13 +127,13 @@ const CatalogGrid = ({  }: CatalogGridProps) => {
           <motion.div 
             className="catalog-grid__item catalog-grid__image-card"
             variants={itemVariants}
-            whileHover={{ scale: 1.05, transition: { duration: 0.4 } }}
+            whileHover={!isMobile ? { scale: 1.05, transition: { duration: 0.4 } } : {}}
           >
             <motion.img
               src="https://images.unsplash.com/photo-1549298916-b41d501d3772?w=600&h=800&fit=crop&crop=center"
               alt="Zapatos y accesorios"
               className="catalog-grid__image"
-              whileHover={{ scale: 1.1 }}
+              whileHover={!isMobile ? { scale: 1.1 } : {}}
               transition={{ duration: 0.6 }}
             />
           </motion.div>
@@ -139,13 +141,13 @@ const CatalogGrid = ({  }: CatalogGridProps) => {
           <motion.div 
             className="catalog-grid__item catalog-grid__image-card"
             variants={itemVariants}
-            whileHover={{ scale: 1.05, transition: { duration: 0.4 } }}
+            whileHover={!isMobile ? { scale: 1.05, transition: { duration: 0.4 } } : {}}
           >
             <motion.img
               src="https://images.unsplash.com/photo-1551028719-00167b16eac5?w=600&h=800&fit=crop&crop=faces"
               alt="Moda urbana"
               className="catalog-grid__image"
-              whileHover={{ scale: 1.1 }}
+              whileHover={!isMobile ? { scale: 1.1 } : {}}
               transition={{ duration: 0.6 }}
             />
           </motion.div>
@@ -153,7 +155,7 @@ const CatalogGrid = ({  }: CatalogGridProps) => {
           <motion.div 
             className="catalog-grid__item catalog-grid__cta-card"
             variants={itemVariants}
-            whileHover={{ scale: 1.02, transition: { duration: 0.3 } }}
+            whileHover={!isMobile ? { scale: 1.02, transition: { duration: 0.3 } } : {}}
           >
             <div className="catalog-grid__cta-content">
               <motion.h3 
@@ -180,7 +182,7 @@ const CatalogGrid = ({  }: CatalogGridProps) => {
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.5, duration: 0.6 }}
-                whileHover={{ scale: 1.05, transition: { duration: 0.2 } }}
+                whileHover={!isMobile ? { scale: 1.05, transition: { duration: 0.2 } } : {}}
                 whileTap={{ scale: 0.95 }}
               >
                 Explorar Más

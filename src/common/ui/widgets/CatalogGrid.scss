@@ -7,6 +7,10 @@
   position: relative;
   overflow: hidden;
 
+  @include mobile {
+    padding: $spacing-12 0;
+  }
+
   &::before {
     content: '';
     position: absolute;
@@ -43,9 +47,9 @@
 
   @include mobile {
     grid-template-columns: 1fr;
-    grid-template-rows: repeat(8, 260px);
-    gap: $spacing-3;
-    padding: 0 $spacing-2;
+    grid-template-rows: auto;
+    gap: $spacing-4;
+    padding: 0 $spacing-4;
   }
 
   &__item {
@@ -58,10 +62,21 @@
       0 4px 16px rgba(0, 0, 0, 0.08),
       0 2px 8px rgba(0, 0, 0, 0.04);
 
+    @include mobile {
+      min-height: 250px;
+      cursor: default; // Desactivar cursor pointer en móvil
+    }
+
     &:hover {
       box-shadow: 
         0 12px 32px rgba(0, 0, 0, 0.15),
         0 6px 16px rgba(59, 130, 246, 0.1);
+
+      @include mobile {
+        box-shadow: 
+          0 4px 16px rgba(0, 0, 0, 0.08),
+          0 2px 8px rgba(0, 0, 0, 0.04); // Sin cambio en móvil
+      }
     }
   }
 
@@ -75,7 +90,8 @@
     backdrop-filter: blur(10px);
 
     @include mobile {
-      padding: $spacing-4;
+      padding: $spacing-5;
+      min-height: 200px;
     }
   }
 
@@ -92,6 +108,11 @@
     letter-spacing: 1px;
     margin-bottom: $spacing-2;
     font-family: 'Inter', sans-serif;
+
+    @include mobile {
+      font-size: $font-size-xs;
+      margin-bottom: $spacing-1;
+    }
   }
 
   &__title {
@@ -125,7 +146,10 @@
     line-height: 1.5;
     
     @include mobile {
-      font-size: $font-size-xs;
+      font-size: $font-size-sm;
+      max-width: 100%;
+      margin-bottom: $spacing-3;
+      line-height: 1.4;
     }
   }
 
@@ -156,6 +180,10 @@
   &__image-card {
     position: relative;
     overflow: hidden;
+
+    @include mobile {
+      min-height: 250px;
+    }
   }
 
   &__image {
@@ -163,6 +191,10 @@
     height: 100%;
     object-fit: cover;
     transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+
+    @include mobile {
+      transition: none; // Desactivar animaciones en móvil
+    }
   }
 
   &__overlay {
@@ -345,7 +377,8 @@
     backdrop-filter: blur(10px);
 
     @include mobile {
-      padding: $spacing-4;
+      padding: $spacing-5;
+      min-height: 200px;
     }
   }
 
@@ -412,9 +445,10 @@
     }
 
     @include mobile {
-      padding: $spacing-2 $spacing-4;
-      font-size: $font-size-xs;
-      width: 100%;
+      padding: $spacing-3 $spacing-5;
+      font-size: $font-size-sm;
+      width: auto;
+      min-width: 140px;
     }
   }
 }

@@ -27,7 +27,7 @@ const HeroSection = ({ onCtaClick }: HeroSectionProps) => {
       category: "Nueva Colección",
       title: "Estilo Urbano Moderno",
       subtitle: "Descubre las últimas tendencias",
-      description: "Ropa cómoda y elegante para tu día a día. Combina estilo y comodidad en cada prenda.",
+      description: "Ropa cómoda y elegante para tu día a día.",
       ctaText: "Ver Catálogo",
       image: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=600&h=800&fit=crop&crop=faces",
       discount: "30% OFF"
