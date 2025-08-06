@@ -15,7 +15,6 @@ const Products = () => {
     error 
   } = useProducts({});
 
-  // Paginación manual (porque la API no respeta el limit)
   const totalPages = Math.ceil(allProducts.length / productsPerPage);
   const startIndex = (currentPage - 1) * productsPerPage;
   const endIndex = startIndex + productsPerPage;
@@ -133,7 +132,6 @@ const Products = () => {
         </div>
       </section>
 
-      {/* Paginación */}
       {totalPages > 1 && (
         <section className="products-pagination">
           <div className="container">
