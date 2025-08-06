@@ -2,7 +2,7 @@
 @import '../../../styles/abstracts/mixins';
 
 .product-card {
-  background: #f3f4f6; // Gris claro como en la imagen
+  background: #EFEFEF; 
   border-radius: $border-radius-lg;
   padding: $spacing-6;
   width: 100%;
@@ -16,7 +16,6 @@
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
   }
 
-  // Header con información del producto
   &__header {
     display: flex;
     justify-content: space-between;
@@ -105,7 +104,6 @@
     letter-spacing: 0.5px;
   }
 
-  // Indicador de colores adicionales
   &__colors {
     display: flex;
     align-items: center;
@@ -123,7 +121,6 @@
     color: #6b7280;
   }
 
-  // Contenedor de imagen
   &__image-container {
     display: flex;
     justify-content: center;
@@ -144,6 +141,7 @@
     max-height: 320px;
     object-fit: contain;
     transition: transform 0.3s ease;
+    background: transparent;
 
     &:hover {
       transform: scale(1.02);
@@ -154,7 +152,6 @@
     }
   }
 
-  // Navegación inferior
   &__navigation {
     display: flex;
     justify-content: space-between;
@@ -183,7 +180,6 @@
     font-weight: 300;
   }
 
-  // Controles de navegación
   &__controls {
     display: flex;
     gap: $spacing-3;

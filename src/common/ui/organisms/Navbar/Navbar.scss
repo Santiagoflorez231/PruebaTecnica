@@ -134,6 +134,8 @@
       color: $primary-color;
       font-weight: 600;
       background: rgba($primary-color, 0.1);
+      outline: none;
+      border: none;
     }
 
     &-indicator {
@@ -154,7 +156,50 @@
     }
   }
 
-  // Estilos del carrito de compras
+  &__cart-mobile {
+    display: none;
+    position: relative;
+    align-items: center;
+    gap: $spacing-1;
+    padding: $spacing-2;
+    background: rgba($primary-color, 0.1);
+    border: none;
+    border-radius: $border-radius-lg;
+    cursor: pointer;
+    transition: all $transition-fast;
+    color: $primary-color;
+
+    @include mobile {
+      display: flex;
+    }
+
+    &:hover {
+      background: rgba($primary-color, 0.15);
+      transform: translateY(-1px);
+    }
+
+    svg {
+      color: $primary-color;
+    }
+
+    .navbar__cart-count {
+      position: absolute;
+      top: -8px;
+      right: -8px;
+      background: $accent-color;
+      color: white;
+      font-size: 11px;
+      font-weight: 600;
+      min-width: 18px;
+      height: 18px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+  }
+
   &__cart {
     position: relative;
     display: flex;
@@ -203,7 +248,7 @@
   }
 
   &__toggle {
-    display: none; // Oculto por defecto
+    display: none;
     @include flex-column-center;
     width: 40px;
     height: 40px;
@@ -216,11 +261,6 @@
 
     &:hover {
       background: rgba(255, 255, 255, 0.2);
-    }
-
-    // Solo mostrar en tablets y móviles
-    @include tablet {
-      display: flex;
     }
     
     @include mobile {
