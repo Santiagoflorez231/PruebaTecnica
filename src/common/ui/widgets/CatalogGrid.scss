@@ -46,10 +46,10 @@
   }
 
   @include mobile {
-    grid-template-columns: 1fr;
-    grid-template-rows: auto;
-    gap: $spacing-4;
-    padding: 0 $spacing-4;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(4, 220px);
+    gap: $spacing-2;
+    padding: 0 $spacing-3;
   }
 
   &__item {
@@ -63,8 +63,8 @@
       0 2px 8px rgba(0, 0, 0, 0.04);
 
     @include mobile {
-      min-height: 250px;
-      cursor: default; // Desactivar cursor pointer en móvil
+      min-height: 200px;
+      cursor: default; 
     }
 
     &:hover {
@@ -75,7 +75,7 @@
       @include mobile {
         box-shadow: 
           0 4px 16px rgba(0, 0, 0, 0.08),
-          0 2px 8px rgba(0, 0, 0, 0.04); // Sin cambio en móvil
+          0 2px 8px rgba(0, 0, 0, 0.04); 
       }
     }
   }
@@ -90,8 +90,8 @@
     backdrop-filter: blur(10px);
 
     @include mobile {
-      padding: $spacing-5;
-      min-height: 200px;
+      padding: $spacing-3;
+      min-height: 180px;
     }
   }
 
@@ -110,8 +110,9 @@
     font-family: 'Inter', sans-serif;
 
     @include mobile {
-      font-size: $font-size-xs;
+      font-size: 0.65rem;
       margin-bottom: $spacing-1;
+      letter-spacing: 0.5px;
     }
   }
 
@@ -128,8 +129,9 @@
     background-clip: text;
 
     @include mobile {
-      font-size: clamp(1.5rem, 5vw, 2rem);
-      margin-bottom: $spacing-2;
+      font-size: 0.9rem;
+      margin-bottom: $spacing-1;
+      line-height: 1.1;
     }
   }
 
@@ -146,10 +148,10 @@
     line-height: 1.5;
     
     @include mobile {
-      font-size: $font-size-sm;
+      font-size: 0.7rem;
       max-width: 100%;
-      margin-bottom: $spacing-3;
-      line-height: 1.4;
+      margin-bottom: $spacing-1;
+      line-height: 1.2;
     }
   }
 
@@ -168,7 +170,8 @@
     }
 
     @include mobile {
-      font-size: $font-size-xs;
+      font-size: 0.65rem;
+      gap: $spacing-1;
     }
   }
 
@@ -182,7 +185,7 @@
     overflow: hidden;
 
     @include mobile {
-      min-height: 250px;
+      min-height: 200px;
     }
   }
 
@@ -193,7 +196,7 @@
     transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 
     @include mobile {
-      transition: none; // Desactivar animaciones en móvil
+      transition: none;
     }
   }
 
@@ -244,7 +247,7 @@
     backdrop-filter: blur(10px);
 
     @include mobile {
-      padding: $spacing-4;
+      padding: $spacing-2;
     }
   }
 
@@ -259,6 +262,11 @@
     justify-content: center;
     gap: $spacing-1;
     margin-bottom: $spacing-3;
+
+    @include mobile {
+      margin-bottom: $spacing-1;
+      gap: 2px;
+    }
   }
 
   &__current {
@@ -269,18 +277,31 @@
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+
+    @include mobile {
+      font-size: 1.5rem;
+    }
   }
 
   &__divider {
     font-size: clamp(1.5rem, 3vw, 2rem);
     color: $text-secondary;
     margin: 0 $spacing-1;
+
+    @include mobile {
+      font-size: 1rem;
+      margin: 0 2px;
+    }
   }
 
   &__total {
     font-size: clamp(1.25rem, 2.5vw, 1.75rem);
     color: $text-secondary;
     font-weight: 600;
+
+    @include mobile {
+      font-size: 0.9rem;
+    }
   }
 
   &__label {
@@ -292,7 +313,9 @@
     letter-spacing: 1px;
 
     @include mobile {
-      font-size: $font-size-xs;
+      font-size: 0.6rem;
+      margin-bottom: $spacing-1;
+      letter-spacing: 0.5px;
     }
   }
 
@@ -303,7 +326,8 @@
     margin-bottom: $spacing-4;
 
     @include mobile {
-      font-size: $font-size-sm;
+      font-size: 0.7rem;
+      margin-bottom: $spacing-2;
     }
   }
 
@@ -312,6 +336,11 @@
     gap: $spacing-2;
     justify-content: center;
     margin-bottom: $spacing-4;
+
+    @include mobile {
+      gap: $spacing-1;
+      margin-bottom: $spacing-2;
+    }
   }
 
   &__nav-btn {
@@ -340,9 +369,9 @@
     }
 
     @include mobile {
-      width: 35px;
-      height: 35px;
-      font-size: $font-size-base;
+      width: 28px;
+      height: 28px;
+      font-size: 0.7rem;
     }
   }
 
@@ -377,8 +406,8 @@
     backdrop-filter: blur(10px);
 
     @include mobile {
-      padding: $spacing-5;
-      min-height: 200px;
+      padding: $spacing-3;
+      min-height: 180px;
     }
   }
 
@@ -400,8 +429,9 @@
     background-clip: text;
 
     @include mobile {
-      font-size: clamp(1.1rem, 4vw, 1.5rem);
-      margin-bottom: $spacing-2;
+      font-size: 0.85rem;
+      margin-bottom: $spacing-1;
+      line-height: 1.1;
     }
   }
 
@@ -417,8 +447,10 @@
     margin-right: auto;
 
     @include mobile {
+      font-size: 0.65rem;
       max-width: 100%;
-      margin-bottom: $spacing-3;
+      margin-bottom: $spacing-1;
+      line-height: 1.2;
     }
   }
 
@@ -445,15 +477,14 @@
     }
 
     @include mobile {
-      padding: $spacing-3 $spacing-5;
-      font-size: $font-size-sm;
+      padding: $spacing-2 $spacing-3;
+      font-size: 0.65rem;
       width: auto;
-      min-width: 140px;
+      min-width: 80px;
     }
   }
 }
 
-// Animaciones keyframes
 @keyframes pulse-glow {
   0%, 100% {
     box-shadow: 0 0 5px rgba(59, 130, 246, 0.3);
