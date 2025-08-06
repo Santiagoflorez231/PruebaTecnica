@@ -35,9 +35,7 @@ const Navbar = () => {
       transition={{ duration: 0.6, ease: "easeOut" }}
     >
       <nav className="navbar__container">
-        {/* Sección izquierda: Logo + Navegación */}
         <div className="navbar__left-section">
-          {/* Logo/Brand */}
           <motion.div
             className="navbar__brand"
             whileHover={{ scale: 1.05 }}
@@ -49,7 +47,6 @@ const Navbar = () => {
             </Link>
           </motion.div>
 
-          {/* Desktop Navigation */}
           <div className="navbar__nav navbar__nav--desktop">
             <ul className="navbar__menu">
               {navItems.map((item, index) => (
@@ -79,7 +76,6 @@ const Navbar = () => {
           </div>
         </div>
 
-        {/* Sección derecha: CTA + Toggle */}
         <div className="navbar__right-section">
           <motion.div
             className="navbar__actions"
