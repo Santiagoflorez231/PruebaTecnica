@@ -6,9 +6,9 @@
   border-top: 1px solid #f3f4f6;
   
   &__container {
-    max-width: 80rem; // max-w-7xl
+    max-width: 80rem;
     margin: 0 auto;
-    padding: 4rem 1.5rem 5rem; // py-16 lg:py-20 pt-10 px-6
+    padding: 4rem 1.5rem 5rem; 
     
     @include tablet {
       padding: 4rem 1.5rem;
@@ -72,15 +72,15 @@
   }
   
   &__logo-text {
-    font-size: 1.875rem; // text-3xl
-    font-weight: 700; // font-bold
-    color: #111827; // text-gray-900
+    font-size: 1.875rem; 
+    font-weight: 700; 
+    color: #111827; 
   }
   
   &__logo-dot {
-    color: #9ca3af; // text-gray-400
-    font-size: 1.875rem; // text-3xl
-    margin-left: 0.25rem; // ml-1
+    color: #9ca3af; 
+    font-size: 1.875rem; 
+    margin-left: 0.25rem; 
   }
   
   &__description {
@@ -117,23 +117,23 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 2.75rem; // w-11
-    height: 2.75rem; // h-11
-    background: #f9fafb; // bg-gray-50
-    border: 1px solid #e5e7eb; // border-gray-200
-    border-radius: 50%; // rounded-full
-    color: #4b5563; // text-gray-600
+    width: 2.75rem; 
+    height: 2.75rem; 
+    background: #f9fafb; 
+    border: 1px solid #e5e7eb; 
+    border-radius: 50%; 
+    color: #4b5563; 
     text-decoration: none;
-    transition: all 0.3s ease; // transition-all duration-300
+    transition: all 0.3s ease; 
     
     &:hover {
-      background: #111827; // hover:bg-gray-900
-      border-color: #111827; // hover:border-gray-900
-      color: #ffffff; // hover:text-white
+      background: #111827; 
+      border-color: #111827; 
+      color: #ffffff; 
     }
   }
   
-  // Section styling
+  
   &__section {
     display: flex;
     flex-direction: column;
@@ -237,7 +237,7 @@
     }
   }
   
-  // Bottom section
+  
   &__bottom {
     border-top: 1px solid #f3f4f6;
     padding-top: 2rem;
@@ -281,19 +281,19 @@
   }
   
   &__legal-link {
-    color: #6b7280; // text-gray-500
+    color: #6b7280; 
     background: none;
     border: none;
     font-size: inherit;
-    cursor: default; // cursor-default
-    transition: color 0.3s ease; // transition-colors duration-300
+    cursor: default; 
+    transition: color 0.3s ease; 
     
     &:hover {
-      color: #111827; // hover:text-gray-900
+      color: #111827; 
     }
   }
   
   &__separator {
-    color: #d1d5db; // text-gray-300
+    color: #d1d5db; 
   }
 }

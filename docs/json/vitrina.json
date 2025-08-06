@@ -1,0 +1,674 @@
+{
+    "productId": "125832031",
+    "productName": "Polo manga corta Essential para hombre textura",
+    "brand": "Vélez",
+    "brandId": 2000000,
+    "brandImageUrl": null,
+    "linkText": "polo-1039322-00",
+    "productReference": "103932200",
+    "productReferenceCode": "103932200",
+    "categoryId": "52",
+    "productTitle": "Polo | Vélez",
+    "metaTagDescription": "Ligera y suave, esta polo es el equilibrio perfecto entre frescura y sofisticación. Su tela texturizada brinda confort en cada uso, mientras que los puños y el cuello en contraste añaden un toque contemporáneo. Perfecta para combinar con bermudas o jeans, es ideal tanto para la oficina como para un fin de semana relajado. Eleva tu estilismo con una pieza que resalta por su autenticidad y encanto versátil.",
+    "releaseDate": "2025-06-11T03:22:00Z",
+    "clusterHighlights": {
+
+    },
+    "CUELLO": [
+      "Polo"
+    ],
+    "TIPO DE MANGA": [
+      "Corta"
+    ],
+    "ROPA": [
+      "Camisas"
+    ],
+    "Modelo": [
+      "103932200"
+    ],
+    "Impuesto": [
+      "19"
+    ],
+    "Genero": [
+      "Hombre"
+    ],
+    "REGISTRO SIC": [
+      "800191700"
+    ],
+    "General": [
+      "CUELLO",
+      "TIPO DE MANGA",
+      "ROPA",
+      "Modelo",
+      "Impuesto",
+      "Genero",
+      "REGISTRO SIC"
+    ],
+    "ALTO (cm)": [
+      "Ver guía de tallas"
+    ],
+    "INSTRUCCIONES DE CUIDADO": [
+      "Se recomienda lavar a mano por el revés. Lavar con colores similares. No usar blanqueador, ni disolventes. No se recomienda secar a máquina. Planchar a temperatura máx. de 110°, planchar por el revés. No lavar en seco. No someter a procesos de lavandería industrial, usar jabones suaves que cuiden el color. No dejar en remojo, ya que podría sufrir desgaste y migración de color."
+    ],
+    "PAÍS DE ORIGEN": [
+      "Colombia"
+    ],
+    "PESO (gr)": [
+      "198"
+    ],
+    "CARACTERÍSTICAS": [
+      "- Polo de manga corta con textura \u003Cbr\u003E- Puños y cuello en contraste \u003Cbr\u003E- Tela ligera que aporta frescura y comodidad"
+    ],
+    "FABRICANTE Y/O IMPORTADOR": [
+      "Cueros Vélez S.A.S. | NIT 800191700-8"
+    ],
+    "ANCHO (cm)": [
+      "Ver guía de tallas"
+    ],
+    "PROFUNDO/LONGITUD (cm)": [
+      "Ver guía de tallas"
+    ],
+    "COMPOSICIÓN": [
+      "Externo: 100% Algodon"
+    ],
+    "Contenido": [
+      "ALTO (cm)",
+      "INSTRUCCIONES DE CUIDADO",
+      "PAÍS DE ORIGEN",
+      "PESO (gr)",
+      "CARACTERÍSTICAS",
+      "FABRICANTE Y/O IMPORTADOR",
+      "ANCHO (cm)",
+      "PROFUNDO/LONGITUD (cm)",
+      "COMPOSICIÓN"
+    ],
+    "allSpecifications": [
+      "CUELLO",
+      "TIPO DE MANGA",
+      "ROPA",
+      "Modelo",
+      "Impuesto",
+      "Genero",
+      "REGISTRO SIC",
+      "ALTO (cm)",
+      "INSTRUCCIONES DE CUIDADO",
+      "PAÍS DE ORIGEN",
+      "PESO (gr)",
+      "CARACTERÍSTICAS",
+      "FABRICANTE Y/O IMPORTADOR",
+      "ANCHO (cm)",
+      "PROFUNDO/LONGITUD (cm)",
+      "COMPOSICIÓN"
+    ],
+    "allSpecificationsGroups": [
+      "General",
+      "Contenido"
+    ],
+    "description": "Ligera y suave, esta polo es el equilibrio perfecto entre frescura y sofisticación. Su tela texturizada brinda confort en cada uso, mientras que los puños y el cuello en contraste añaden un toque contemporáneo. Perfecta para combinar con bermudas o jeans, es ideal tanto para la oficina como para un fin de semana relajado. Eleva tu estilismo con una pieza que resalta por su autenticidad y encanto versátil.",
+    "items": [
+      {
+        "itemId": "663368493",
+        "name": "Polo manga corta Essential para hombre textura Negro XS",
+        "nameComplete": "Polo manga corta Essential para hombre textura Negro XS",
+        "complementName": "",
+        "ean": "7705007689434",
+        "referenceId": [
+          {
+            "Key": "RefId",
+            "Value": "103932200XS"
+          }
+        ],
+        "measurementUnit": "un",
+        "unitMultiplier": 1,
+        "modalType": null,
+        "isKit": false,
+        "images": [
+          {
+            "imageId": "293401",
+            "imageLabel": "1",
+            "imageTag": "\u003Cimg src=\"~/arquivos/ids/293401-#width#-#height#/1039322-00-01-Polo.jpg?v=638845667355730000\" width=\"#width#\" height=\"#height#\" alt=\"Polo\" id=\"\" /\u003E",
+            "imageUrl": "https://cuerosvelezco.vteximg.com.br/arquivos/ids/293401/1039322-00-01-Polo.jpg?v=638845667355730000",
+            "imageText": "Polo",
+            "imageLastModified": "2025-06-03T16:58:55.5730000Z"
+          },
+          {
+            "imageId": "293402",
+            "imageLabel": "2",
+            "imageTag": "\u003Cimg src=\"~/arquivos/ids/293402-#width#-#height#/1039322-00-02-Polo.jpg?v=638845667945400000\" width=\"#width#\" height=\"#height#\" alt=\"Polo\" id=\"\" /\u003E",
+            "imageUrl": "https://cuerosvelezco.vteximg.com.br/arquivos/ids/293402/1039322-00-02-Polo.jpg?v=638845667945400000",
+            "imageText": "Polo",
+            "imageLastModified": "2025-06-03T16:59:54.5400000Z"
+          },
+          {
+            "imageId": "293403",
+            "imageLabel": "3",
+            "imageTag": "\u003Cimg src=\"~/arquivos/ids/293403-#width#-#height#/1039322-00-03-Polo.jpg?v=638845668032030000\" width=\"#width#\" height=\"#height#\" alt=\"Polo\" id=\"\" /\u003E",
+            "imageUrl": "https://cuerosvelezco.vteximg.com.br/arquivos/ids/293403/1039322-00-03-Polo.jpg?v=638845668032030000",
+            "imageText": "Polo",
+            "imageLastModified": "2025-06-03T17:00:03.2030000Z"
+          },
+          {
+            "imageId": "293404",
+            "imageLabel": "4",
+            "imageTag": "\u003Cimg src=\"~/arquivos/ids/293404-#width#-#height#/1039322-00-04-Polo.jpg?v=638845668135070000\" width=\"#width#\" height=\"#height#\" alt=\"Polo\" id=\"\" /\u003E",
+            "imageUrl": "https://cuerosvelezco.vteximg.com.br/arquivos/ids/293404/1039322-00-04-Polo.jpg?v=638845668135070000",
+            "imageText": "Polo",
+            "imageLastModified": "2025-06-03T17:00:13.5070000Z"
+          },
+          {
+            "imageId": "293405",
+            "imageLabel": "5",
+            "imageTag": "\u003Cimg src=\"~/arquivos/ids/293405-#width#-#height#/1039322-00-05-Polo.jpg?v=638845668386900000\" width=\"#width#\" height=\"#height#\" alt=\"Polo\" id=\"\" /\u003E",
+            "imageUrl": "https://cuerosvelezco.vteximg.com.br/arquivos/ids/293405/1039322-00-05-Polo.jpg?v=638845668386900000",
+            "imageText": "Polo",
+            "imageLastModified": "2025-06-03T17:00:38.6900000Z"
+          },
+          {
+            "imageId": "293406",
+            "imageLabel": "6",
+            "imageTag": "\u003Cimg src=\"~/arquivos/ids/293406-#width#-#height#/1039322-00-06-Polo.jpg?v=638845668608100000\" width=\"#width#\" height=\"#height#\" alt=\"Polo\" id=\"\" /\u003E",
+            "imageUrl": "https://cuerosvelezco.vteximg.com.br/arquivos/ids/293406/1039322-00-06-Polo.jpg?v=638845668608100000",
+            "imageText": "Polo",
+            "imageLastModified": "2025-06-03T17:01:00.8100000Z"
+          }
+        ],
+        "Color": [
+          "Negro"
+        ],
+        "Talla": [
+          "XS"
+        ],
+        "variations": [
+          "Color",
+          "Talla"
+        ],
+        "sellers": [
+          {
+            "sellerId": "1",
+            "sellerName": "VÉLEZ",
+            "addToCartLink": "https://cuerosvelezco.myvtex.com/checkout/cart/add?sku=663368493&qty=1&seller=1&sc=1&price=13990000&cv=_&sc=1",
+            "sellerDefault": true,
+            "commertialOffer": {
+              "DeliverySlaSamplesPerRegion": {
+
+              },
+              "Installments": [],
+              "DiscountHighLight": [],
+              "GiftSkuIds": [],
+              "Teasers": [],
+              "PromotionTeasers": [],
+              "BuyTogether": [],
+              "ItemMetadataAttachment": [],
+              "Price": 139900,
+              "ListPrice": 139900,
+              "PriceWithoutDiscount": 139900,
+              "FullSellingPrice": 139900,
+              "RewardValue": 0,
+              "PriceValidUntil": "2026-08-01T00:00:00Z",
+              "AvailableQuantity": 0,
+              "IsAvailable": false,
+              "Tax": 0,
+              "DeliverySlaSamples": [],
+              "GetInfoErrorMessage": "Code: withoutStock | Status:error | Message: El ítem Polo manga corta Essential para hombre textura Negro XS no tiene inventario",
+              "CacheVersionUsedToCallCheckout": "_",
+              "PaymentOptions": {
+                "installmentOptions": [],
+                "paymentSystems": [],
+                "payments": [],
+                "giftCards": [],
+                "giftCardMessages": [],
+                "availableAccounts": [],
+                "availableTokens": []
+              }
+            }
+          }
+        ],
+        "Videos": [],
+        "estimatedDateArrival": null
+      },
+      {
+        "itemId": "663368494",
+        "name": "Polo manga corta Essential para hombre textura Negro S",
+        "nameComplete": "Polo manga corta Essential para hombre textura Negro S",
+        "complementName": "",
+        "ean": "7705007689410",
+        "referenceId": [
+          {
+            "Key": "RefId",
+            "Value": "103932200S"
+          }
+        ],
+        "measurementUnit": "un",
+        "unitMultiplier": 1,
+        "modalType": null,
+        "isKit": false,
+        "images": [
+          {
+            "imageId": "293401",
+            "imageLabel": "1",
+            "imageTag": "\u003Cimg src=\"~/arquivos/ids/293401-#width#-#height#/1039322-00-01-Polo.jpg?v=638845667355730000\" width=\"#width#\" height=\"#height#\" alt=\"Polo\" id=\"\" /\u003E",
+            "imageUrl": "https://cuerosvelezco.vteximg.com.br/arquivos/ids/293401/1039322-00-01-Polo.jpg?v=638845667355730000",
+            "imageText": "Polo",
+            "imageLastModified": "2025-06-03T16:58:55.5730000Z"
+          },
+          {
+            "imageId": "293402",
+            "imageLabel": "2",
+            "imageTag": "\u003Cimg src=\"~/arquivos/ids/293402-#width#-#height#/1039322-00-02-Polo.jpg?v=638845667945400000\" width=\"#width#\" height=\"#height#\" alt=\"Polo\" id=\"\" /\u003E",
+            "imageUrl": "https://cuerosvelezco.vteximg.com.br/arquivos/ids/293402/1039322-00-02-Polo.jpg?v=638845667945400000",
+            "imageText": "Polo",
+            "imageLastModified": "2025-06-03T16:59:54.5400000Z"
+          },
+          {
+            "imageId": "293403",
+            "imageLabel": "3",
+            "imageTag": "\u003Cimg src=\"~/arquivos/ids/293403-#width#-#height#/1039322-00-03-Polo.jpg?v=638845668032030000\" width=\"#width#\" height=\"#height#\" alt=\"Polo\" id=\"\" /\u003E",
+            "imageUrl": "https://cuerosvelezco.vteximg.com.br/arquivos/ids/293403/1039322-00-03-Polo.jpg?v=638845668032030000",
+            "imageText": "Polo",
+            "imageLastModified": "2025-06-03T17:00:03.2030000Z"
+          },
+          {
+            "imageId": "293404",
+            "imageLabel": "4",
+            "imageTag": "\u003Cimg src=\"~/arquivos/ids/293404-#width#-#height#/1039322-00-04-Polo.jpg?v=638845668135070000\" width=\"#width#\" height=\"#height#\" alt=\"Polo\" id=\"\" /\u003E",
+            "imageUrl": "https://cuerosvelezco.vteximg.com.br/arquivos/ids/293404/1039322-00-04-Polo.jpg?v=638845668135070000",
+            "imageText": "Polo",
+            "imageLastModified": "2025-06-03T17:00:13.5070000Z"
+          },
+          {
+            "imageId": "293405",
+            "imageLabel": "5",
+            "imageTag": "\u003Cimg src=\"~/arquivos/ids/293405-#width#-#height#/1039322-00-05-Polo.jpg?v=638845668386900000\" width=\"#width#\" height=\"#height#\" alt=\"Polo\" id=\"\" /\u003E",
+            "imageUrl": "https://cuerosvelezco.vteximg.com.br/arquivos/ids/293405/1039322-00-05-Polo.jpg?v=638845668386900000",
+            "imageText": "Polo",
+            "imageLastModified": "2025-06-03T17:00:38.6900000Z"
+          },
+          {
+            "imageId": "293406",
+            "imageLabel": "6",
+            "imageTag": "\u003Cimg src=\"~/arquivos/ids/293406-#width#-#height#/1039322-00-06-Polo.jpg?v=638845668608100000\" width=\"#width#\" height=\"#height#\" alt=\"Polo\" id=\"\" /\u003E",
+            "imageUrl": "https://cuerosvelezco.vteximg.com.br/arquivos/ids/293406/1039322-00-06-Polo.jpg?v=638845668608100000",
+            "imageText": "Polo",
+            "imageLastModified": "2025-06-03T17:01:00.8100000Z"
+          }
+        ],
+        "Color": [
+          "Negro"
+        ],
+        "Talla": [
+          "S"
+        ],
+        "variations": [
+          "Color",
+          "Talla"
+        ]
+      },
+      {
+        "itemId": "663368495",
+        "name": "Polo manga corta Essential para hombre textura Negro M",
+        "nameComplete": "Polo manga corta Essential para hombre textura Negro M",
+        "complementName": "",
+        "ean": "7705007689403",
+        "referenceId": [
+          {
+            "Key": "RefId",
+            "Value": "103932200M"
+          }
+        ],
+        "measurementUnit": "un",
+        "unitMultiplier": 1,
+        "modalType": null,
+        "isKit": false,
+        "images": [
+          {
+            "imageId": "293401",
+            "imageLabel": "1",
+            "imageTag": "\u003Cimg src=\"~/arquivos/ids/293401-#width#-#height#/1039322-00-01-Polo.jpg?v=638845667355730000\" width=\"#width#\" height=\"#height#\" alt=\"Polo\" id=\"\" /\u003E",
+            "imageUrl": "https://cuerosvelezco.vteximg.com.br/arquivos/ids/293401/1039322-00-01-Polo.jpg?v=638845667355730000",
+            "imageText": "Polo",
+            "imageLastModified": "2025-06-03T16:58:55.5730000Z"
+          },
+          {
+            "imageId": "293402",
+            "imageLabel": "2",
+            "imageTag": "\u003Cimg src=\"~/arquivos/ids/293402-#width#-#height#/1039322-00-02-Polo.jpg?v=638845667945400000\" width=\"#width#\" height=\"#height#\" alt=\"Polo\" id=\"\" /\u003E",
+            "imageUrl": "https://cuerosvelezco.vteximg.com.br/arquivos/ids/293402/1039322-00-02-Polo.jpg?v=638845667945400000",
+            "imageText": "Polo",
+            "imageLastModified": "2025-06-03T16:59:54.5400000Z"
+          },
+          {
+            "imageId": "293403",
+            "imageLabel": "3",
+            "imageTag": "\u003Cimg src=\"~/arquivos/ids/293403-#width#-#height#/1039322-00-03-Polo.jpg?v=638845668032030000\" width=\"#width#\" height=\"#height#\" alt=\"Polo\" id=\"\" /\u003E",
+            "imageUrl": "https://cuerosvelezco.vteximg.com.br/arquivos/ids/293403/1039322-00-03-Polo.jpg?v=638845668032030000",
+            "imageText": "Polo",
+            "imageLastModified": "2025-06-03T17:00:03.2030000Z"
+          },
+          {
+            "imageId": "293404",
+            "imageLabel": "4",
+            "imageTag": "\u003Cimg src=\"~/arquivos/ids/293404-#width#-#height#/1039322-00-04-Polo.jpg?v=638845668135070000\" width=\"#width#\" height=\"#height#\" alt=\"Polo\" id=\"\" /\u003E",
+            "imageUrl": "https://cuerosvelezco.vteximg.com.br/arquivos/ids/293404/1039322-00-04-Polo.jpg?v=638845668135070000",
+            "imageText": "Polo",
+            "imageLastModified": "2025-06-03T17:00:13.5070000Z"
+          },
+          {
+            "imageId": "293405",
+            "imageLabel": "5",
+            "imageTag": "\u003Cimg src=\"~/arquivos/ids/293405-#width#-#height#/1039322-00-05-Polo.jpg?v=638845668386900000\" width=\"#width#\" height=\"#height#\" alt=\"Polo\" id=\"\" /\u003E",
+            "imageUrl": "https://cuerosvelezco.vteximg.com.br/arquivos/ids/293405/1039322-00-05-Polo.jpg?v=638845668386900000",
+            "imageText": "Polo",
+            "imageLastModified": "2025-06-03T17:00:38.6900000Z"
+          },
+          {
+            "imageId": "293406",
+            "imageLabel": "6",
+            "imageTag": "\u003Cimg src=\"~/arquivos/ids/293406-#width#-#height#/1039322-00-06-Polo.jpg?v=638845668608100000\" width=\"#width#\" height=\"#height#\" alt=\"Polo\" id=\"\" /\u003E",
+            "imageUrl": "https://cuerosvelezco.vteximg.com.br/arquivos/ids/293406/1039322-00-06-Polo.jpg?v=638845668608100000",
+            "imageText": "Polo",
+            "imageLastModified": "2025-06-03T17:01:00.8100000Z"
+          }
+        ],
+        "Color": [
+          "Negro"
+        ],
+        "Talla": [
+          "M"
+        ],
+        "variations": [
+          "Color",
+          "Talla"
+        ]
+      },
+      {
+        "itemId": "663368496",
+        "name": "Polo manga corta Essential para hombre textura Negro L",
+        "nameComplete": "Polo manga corta Essential para hombre textura Negro L",
+        "complementName": "",
+        "ean": "7705007688390",
+        "referenceId": [
+          {
+            "Key": "RefId",
+            "Value": "103932200L"
+          }
+        ],
+        "measurementUnit": "un",
+        "unitMultiplier": 1,
+        "modalType": null,
+        "isKit": false,
+        "images": [
+          {
+            "imageId": "293401",
+            "imageLabel": "1",
+            "imageTag": "\u003Cimg src=\"~/arquivos/ids/293401-#width#-#height#/1039322-00-01-Polo.jpg?v=638845667355730000\" width=\"#width#\" height=\"#height#\" alt=\"Polo\" id=\"\" /\u003E",
+            "imageUrl": "https://cuerosvelezco.vteximg.com.br/arquivos/ids/293401/1039322-00-01-Polo.jpg?v=638845667355730000",
+            "imageText": "Polo",
+            "imageLastModified": "2025-06-03T16:58:55.5730000Z"
+          },
+          {
+            "imageId": "293402",
+            "imageLabel": "2",
+            "imageTag": "\u003Cimg src=\"~/arquivos/ids/293402-#width#-#height#/1039322-00-02-Polo.jpg?v=638845667945400000\" width=\"#width#\" height=\"#height#\" alt=\"Polo\" id=\"\" /\u003E",
+            "imageUrl": "https://cuerosvelezco.vteximg.com.br/arquivos/ids/293402/1039322-00-02-Polo.jpg?v=638845667945400000",
+            "imageText": "Polo",
+            "imageLastModified": "2025-06-03T16:59:54.5400000Z"
+          },
+          {
+            "imageId": "293403",
+            "imageLabel": "3",
+            "imageTag": "\u003Cimg src=\"~/arquivos/ids/293403-#width#-#height#/1039322-00-03-Polo.jpg?v=638845668032030000\" width=\"#width#\" height=\"#height#\" alt=\"Polo\" id=\"\" /\u003E",
+            "imageUrl": "https://cuerosvelezco.vteximg.com.br/arquivos/ids/293403/1039322-00-03-Polo.jpg?v=638845668032030000",
+            "imageText": "Polo",
+            "imageLastModified": "2025-06-03T17:00:03.2030000Z"
+          },
+          {
+            "imageId": "293404",
+            "imageLabel": "4",
+            "imageTag": "\u003Cimg src=\"~/arquivos/ids/293404-#width#-#height#/1039322-00-04-Polo.jpg?v=638845668135070000\" width=\"#width#\" height=\"#height#\" alt=\"Polo\" id=\"\" /\u003E",
+            "imageUrl": "https://cuerosvelezco.vteximg.com.br/arquivos/ids/293404/1039322-00-04-Polo.jpg?v=638845668135070000",
+            "imageText": "Polo",
+            "imageLastModified": "2025-06-03T17:00:13.5070000Z"
+          },
+          {
+            "imageId": "293405",
+            "imageLabel": "5",
+            "imageTag": "\u003Cimg src=\"~/arquivos/ids/293405-#width#-#height#/1039322-00-05-Polo.jpg?v=638845668386900000\" width=\"#width#\" height=\"#height#\" alt=\"Polo\" id=\"\" /\u003E",
+            "imageUrl": "https://cuerosvelezco.vteximg.com.br/arquivos/ids/293405/1039322-00-05-Polo.jpg?v=638845668386900000",
+            "imageText": "Polo",
+            "imageLastModified": "2025-06-03T17:00:38.6900000Z"
+          },
+          {
+            "imageId": "293406",
+            "imageLabel": "6",
+            "imageTag": "\u003Cimg src=\"~/arquivos/ids/293406-#width#-#height#/1039322-00-06-Polo.jpg?v=638845668608100000\" width=\"#width#\" height=\"#height#\" alt=\"Polo\" id=\"\" /\u003E",
+            "imageUrl": "https://cuerosvelezco.vteximg.com.br/arquivos/ids/293406/1039322-00-06-Polo.jpg?v=638845668608100000",
+            "imageText": "Polo",
+            "imageLastModified": "2025-06-03T17:01:00.8100000Z"
+          }
+        ],
+        "Color": [
+          "Negro"
+        ],
+        "Talla": [
+          "L"
+        ],
+        "variations": [
+          "Color",
+          "Talla"
+        ]
+      },
+      {
+        "itemId": "663368497",
+        "name": "Polo manga corta Essential para hombre textura Negro XL",
+        "nameComplete": "Polo manga corta Essential para hombre textura Negro XL",
+        "complementName": "",
+        "ean": "7705007689427",
+        "referenceId": [
+          {
+            "Key": "RefId",
+            "Value": "103932200XL"
+          }
+        ],
+        "measurementUnit": "un",
+        "unitMultiplier": 1,
+        "modalType": null,
+        "isKit": false,
+        "images": [
+          {
+            "imageId": "293401",
+            "imageLabel": "1",
+            "imageTag": "\u003Cimg src=\"~/arquivos/ids/293401-#width#-#height#/1039322-00-01-Polo.jpg?v=638845667355730000\" width=\"#width#\" height=\"#height#\" alt=\"Polo\" id=\"\" /\u003E",
+            "imageUrl": "https://cuerosvelezco.vteximg.com.br/arquivos/ids/293401/1039322-00-01-Polo.jpg?v=638845667355730000",
+            "imageText": "Polo",
+            "imageLastModified": "2025-06-03T16:58:55.5730000Z"
+          },
+          {
+            "imageId": "293402",
+            "imageLabel": "2",
+            "imageTag": "\u003Cimg src=\"~/arquivos/ids/293402-#width#-#height#/1039322-00-02-Polo.jpg?v=638845667945400000\" width=\"#width#\" height=\"#height#\" alt=\"Polo\" id=\"\" /\u003E",
+            "imageUrl": "https://cuerosvelezco.vteximg.com.br/arquivos/ids/293402/1039322-00-02-Polo.jpg?v=638845667945400000",
+            "imageText": "Polo",
+            "imageLastModified": "2025-06-03T16:59:54.5400000Z"
+          },
+          {
+            "imageId": "293403",
+            "imageLabel": "3",
+            "imageTag": "\u003Cimg src=\"~/arquivos/ids/293403-#width#-#height#/1039322-00-03-Polo.jpg?v=638845668032030000\" width=\"#width#\" height=\"#height#\" alt=\"Polo\" id=\"\" /\u003E",
+            "imageUrl": "https://cuerosvelezco.vteximg.com.br/arquivos/ids/293403/1039322-00-03-Polo.jpg?v=638845668032030000",
+            "imageText": "Polo",
+            "imageLastModified": "2025-06-03T17:00:03.2030000Z"
+          },
+          {
+            "imageId": "293404",
+            "imageLabel": "4",
+            "imageTag": "\u003Cimg src=\"~/arquivos/ids/293404-#width#-#height#/1039322-00-04-Polo.jpg?v=638845668135070000\" width=\"#width#\" height=\"#height#\" alt=\"Polo\" id=\"\" /\u003E",
+            "imageUrl": "https://cuerosvelezco.vteximg.com.br/arquivos/ids/293404/1039322-00-04-Polo.jpg?v=638845668135070000",
+            "imageText": "Polo",
+            "imageLastModified": "2025-06-03T17:00:13.5070000Z"
+          },
+          {
+            "imageId": "293405",
+            "imageLabel": "5",
+            "imageTag": "\u003Cimg src=\"~/arquivos/ids/293405-#width#-#height#/1039322-00-05-Polo.jpg?v=638845668386900000\" width=\"#width#\" height=\"#height#\" alt=\"Polo\" id=\"\" /\u003E",
+            "imageUrl": "https://cuerosvelezco.vteximg.com.br/arquivos/ids/293405/1039322-00-05-Polo.jpg?v=638845668386900000",
+            "imageText": "Polo",
+            "imageLastModified": "2025-06-03T17:00:38.6900000Z"
+          },
+          {
+            "imageId": "293406",
+            "imageLabel": "6",
+            "imageTag": "\u003Cimg src=\"~/arquivos/ids/293406-#width#-#height#/1039322-00-06-Polo.jpg?v=638845668608100000\" width=\"#width#\" height=\"#height#\" alt=\"Polo\" id=\"\" /\u003E",
+            "imageUrl": "https://cuerosvelezco.vteximg.com.br/arquivos/ids/293406/1039322-00-06-Polo.jpg?v=638845668608100000",
+            "imageText": "Polo",
+            "imageLastModified": "2025-06-03T17:01:00.8100000Z"
+          }
+        ],
+        "Color": [
+          "Negro"
+        ],
+        "Talla": [
+          "XL"
+        ],
+        "variations": [
+          "Color",
+          "Talla"
+        ]
+      },
+      {
+        "itemId": "663368498",
+        "name": "Polo manga corta Essential para hombre textura Negro XXL",
+        "nameComplete": "Polo manga corta Essential para hombre textura Negro XXL",
+        "complementName": "",
+        "ean": "7705007689441",
+        "referenceId": [
+          {
+            "Key": "RefId",
+            "Value": "103932200XX"
+          }
+        ],
+        "measurementUnit": "un",
+        "unitMultiplier": 1,
+        "modalType": null,
+        "isKit": false,
+        "images": [
+          {
+            "imageId": "293401",
+            "imageLabel": "1",
+            "imageTag": "\u003Cimg src=\"~/arquivos/ids/293401-#width#-#height#/1039322-00-01-Polo.jpg?v=638845667355730000\" width=\"#width#\" height=\"#height#\" alt=\"Polo\" id=\"\" /\u003E",
+            "imageUrl": "https://cuerosvelezco.vteximg.com.br/arquivos/ids/293401/1039322-00-01-Polo.jpg?v=638845667355730000",
+            "imageText": "Polo",
+            "imageLastModified": "2025-06-03T16:58:55.5730000Z"
+          },
+          {
+            "imageId": "293402",
+            "imageLabel": "2",
+            "imageTag": "\u003Cimg src=\"~/arquivos/ids/293402-#width#-#height#/1039322-00-02-Polo.jpg?v=638845667945400000\" width=\"#width#\" height=\"#height#\" alt=\"Polo\" id=\"\" /\u003E",
+            "imageUrl": "https://cuerosvelezco.vteximg.com.br/arquivos/ids/293402/1039322-00-02-Polo.jpg?v=638845667945400000",
+            "imageText": "Polo",
+            "imageLastModified": "2025-06-03T16:59:54.5400000Z"
+          },
+          {
+            "imageId": "293403",
+            "imageLabel": "3",
+            "imageTag": "\u003Cimg src=\"~/arquivos/ids/293403-#width#-#height#/1039322-00-03-Polo.jpg?v=638845668032030000\" width=\"#width#\" height=\"#height#\" alt=\"Polo\" id=\"\" /\u003E",
+            "imageUrl": "https://cuerosvelezco.vteximg.com.br/arquivos/ids/293403/1039322-00-03-Polo.jpg?v=638845668032030000",
+            "imageText": "Polo",
+            "imageLastModified": "2025-06-03T17:00:03.2030000Z"
+          },
+          {
+            "imageId": "293404",
+            "imageLabel": "4",
+            "imageTag": "\u003Cimg src=\"~/arquivos/ids/293404-#width#-#height#/1039322-00-04-Polo.jpg?v=638845668135070000\" width=\"#width#\" height=\"#height#\" alt=\"Polo\" id=\"\" /\u003E",
+            "imageUrl": "https://cuerosvelezco.vteximg.com.br/arquivos/ids/293404/1039322-00-04-Polo.jpg?v=638845668135070000",
+            "imageText": "Polo",
+            "imageLastModified": "2025-06-03T17:00:13.5070000Z"
+          },
+          {
+            "imageId": "293405",
+            "imageLabel": "5",
+            "imageTag": "\u003Cimg src=\"~/arquivos/ids/293405-#width#-#height#/1039322-00-05-Polo.jpg?v=638845668386900000\" width=\"#width#\" height=\"#height#\" alt=\"Polo\" id=\"\" /\u003E",
+            "imageUrl": "https://cuerosvelezco.vteximg.com.br/arquivos/ids/293405/1039322-00-05-Polo.jpg?v=638845668386900000",
+            "imageText": "Polo",
+            "imageLastModified": "2025-06-03T17:00:38.6900000Z"
+          },
+          {
+            "imageId": "293406",
+            "imageLabel": "6",
+            "imageTag": "\u003Cimg src=\"~/arquivos/ids/293406-#width#-#height#/1039322-00-06-Polo.jpg?v=638845668608100000\" width=\"#width#\" height=\"#height#\" alt=\"Polo\" id=\"\" /\u003E",
+            "imageUrl": "https://cuerosvelezco.vteximg.com.br/arquivos/ids/293406/1039322-00-06-Polo.jpg?v=638845668608100000",
+            "imageText": "Polo",
+            "imageLastModified": "2025-06-03T17:01:00.8100000Z"
+          }
+        ],
+        "Color": [
+          "Negro"
+        ],
+        "Talla": [
+          "XXL"
+        ],
+        "variations": [
+          "Color",
+          "Talla"
+        ]
+      }
+    ],
+    "skuSpecifications": [
+      {
+        "field": {
+          "id": 87,
+          "name": "Color",
+          "isActive": true,
+          "position": 1,
+          "type": "Radio"
+        },
+        "values": [
+          {
+            "id": "133",
+            "name": "Negro",
+            "position": 40
+          }
+        ]
+      },
+      {
+        "field": {
+          "id": 86,
+          "name": "Talla",
+          "isActive": true,
+          "position": 8,
+          "type": "Radio"
+        },
+        "values": [
+          {
+            "id": "90",
+            "name": "L",
+            "position": 40
+          },
+          {
+            "id": "89",
+            "name": "M",
+            "position": 41
+          },
+          {
+            "id": "88",
+            "name": "S",
+            "position": 42
+          },
+          {
+            "id": "91",
+            "name": "XL",
+            "position": 45
+          },
+          {
+            "id": "87",
+            "name": "XS",
+            "position": 46
+          },
+          {
+            "id": "2730",
+            "name": "XXL",
+            "position": 48
+          }
+        ]
+      }
+    ]
+  }
