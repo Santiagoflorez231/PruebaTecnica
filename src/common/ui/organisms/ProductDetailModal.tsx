@@ -242,14 +242,46 @@ const ProductDetailModal: React.FC<ProductDetailModalProps> = ({
               </div>
 
               {selectedItem.sellers?.[0]?.commertialOffer && (
-                <div className="product-pricing">
+                <div className="flex flex-col gap-1 my-4 py-3 border-b border-gray-100">
                   {selectedItem.sellers[0].commertialOffer.ListPrice > 
                    selectedItem.sellers[0].commertialOffer.Price && (
-                    <span className="original-price">
-                      {formatPrice(selectedItem.sellers[0].commertialOffer.ListPrice)}
-                    </span>
+                    <div className="flex items-center gap-2 mb-1">
+                      <span className="text-sm text-gray-400 line-through font-light">
+                        {formatPrice(selectedItem.sellers[0].commertialOffer.ListPrice)}
+                      </span>
+                      <div className="relative">
+                        <button 
+                          className="w-4 h-4 bg-transparent border border-gray-300 rounded-full flex items-center justify-center text-xs text-gray-400 hover:border-gray-400 hover:text-gray-600 transition-colors duration-150 group"
+                          type="button"
+                          aria-label="Ver información de ahorro"
+                          onMouseEnter={(e) => {
+                            const tooltip = e.currentTarget.nextElementSibling as HTMLElement;
+                            if (tooltip) {
+                              tooltip.style.opacity = '1';
+                              tooltip.style.visibility = 'visible';
+                            }
+                          }}
+                          onMouseLeave={(e) => {
+                            const tooltip = e.currentTarget.nextElementSibling as HTMLElement;
+                            if (tooltip) {
+                              tooltip.style.opacity = '0';
+                              tooltip.style.visibility = 'hidden';
+                            }
+                          }}
+                        >
+                          ?
+                        </button>
+                        <div 
+                          className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-1 px-2 py-1 bg-gray-800 text-white text-xs rounded whitespace-nowrap pointer-events-none z-50 transition-all duration-150"
+                          style={{ opacity: 0, visibility: 'hidden' }}
+                        >
+                          Ahorras {formatPrice(selectedItem.sellers[0].commertialOffer.ListPrice - selectedItem.sellers[0].commertialOffer.Price)}
+                          <div className="absolute top-full left-1/2 transform -translate-x-1/2 border-2 border-transparent border-t-gray-800"></div>
+                        </div>
+                      </div>
+                    </div>
                   )}
-                  <span className="current-price">
+                  <span className={`text-2xl font-semibold ${selectedItem.sellers[0].commertialOffer.ListPrice > selectedItem.sellers[0].commertialOffer.Price ? 'text-emerald-600' : 'text-gray-900'}`}>
                     {formatPrice(selectedItem.sellers[0].commertialOffer.Price)}
                   </span>
                 </div>

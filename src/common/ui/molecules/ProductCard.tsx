@@ -20,7 +20,7 @@ const ProductCard = ({ product }: ProductCardProps) => {
   };
 
   const prevImage = (e: React.MouseEvent) => {
-    e.stopPropagation(); l
+    e.stopPropagation(); 
     if (product.images && product.images.length > 1) {
       const newIndex = currentImageIndex > 0 ? currentImageIndex - 1 : product.images.length - 1;
       setCurrentImageIndex(newIndex);
@@ -51,7 +51,6 @@ const ProductCard = ({ product }: ProductCardProps) => {
   const discount = formattedListPrice && product.listPrice ? 
     Math.round(((product.listPrice - product.price) / product.listPrice) * 100) : null;
 
-  // Imagen actual a mostrar
   const currentImage = product.images?.[currentImageIndex] || product.image;
 
   return (
