@@ -1,69 +1,91 @@
-# React + TypeScript + Vite
+# CuraModa
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Una tienda online moderna de ropa y accesorios desarrollada con React, TypeScript y Vite.
 
-Currently, two official plugins are available:
+## 🚀 Instalación
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Cloná el repo y seguí estos pasos para arrancar:
 
-## Expanding the ESLint configuration
+```bash
+# Instalar dependencias
+npm install
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+# Crear archivo .env a partir del ejemplo
+cp .env.example .env
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+# Iniciar servidor de desarrollo
+npm run dev
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+El servidor arrancará en http://localhost:5173
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## ⚙️ Configuración
 
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+El proyecto usa variables de entorno para configurar la API. Asegurate de tener un archivo `.env` con:
+
 ```
+VITE_API_BASE_URL=https://api-frontend-production.up.railway.app/api/products
+```
+
+## 📦 Scripts disponibles
+
+```bash
+# Desarrollo
+npm run dev           # Inicia servidor de desarrollo
+
+# Producción
+npm run build         # Construye para producción
+npm run preview       # Vista previa local del build
+
+# Utilidades
+npm run lint          # Ejecuta ESLint
+npm run typecheck     # Verifica tipos con TypeScript
+```
+
+## 🗂️ Estructura del proyecto
+
+```
+src/
+├── api/               # Conexión con APIs, queries y tipos
+├── common/            # Componentes y utilidades comunes
+│   ├── context/       # Contextos de React (cart, notifications)
+│   ├── hooks/         # Hooks personalizados
+│   ├── router/        # Configuración de rutas
+│   └── ui/            # Componentes UI (atoms, molecules, organisms)
+├── layouts/           # Layout principal de la aplicación
+├── modules/           # Módulos principales por página
+│   ├── error/         # Página 404
+│   ├── home/          # Página de inicio
+│   └── products/      # Catálogo de productos
+└── styles/            # Estilos globales (SCSS)
+```
+
+## ✨ Características principales
+
+- **Catálogo de productos** con filtros y búsqueda
+- **Modal de detalles** de producto con selección de variantes
+- **Carrito de compras** persistente
+- **Checkout** con confirmación de compra
+- **Diseño responsive** optimizado para móvil y escritorio
+- **Blurring** del fondo al abrir modales
+- **Productos relacionados** con recomendaciones
+
+## 🛠️ Tecnologías
+
+- React 18
+- TypeScript
+- Vite
+- React Router
+- SCSS para estilos
+- React Query para manejo de datos
+- Framer Motion para animaciones
+- ESLint y Prettier para código limpio
+
+## 📝 Notas de desarrollo
+
+- El proyecto usa una estructura modular para facilitar la escalabilidad
+- Los estilos están organizados según la metodología 7-1 de SASS
+- La carpeta common/ui implementa una arquitectura de UI basada en Atomic Design
+- La carpeta `docs/json` contiene una muestra del análisis que hice a la API para entender su estructura
+
+
