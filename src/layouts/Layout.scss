@@ -1,8 +1,8 @@
 @use 'sass:color';
-@import '../../styles/abstracts/variables';
-@import '../../styles/abstracts/mixins';
+@import '../styles/abstracts/variables';
+@import '../styles/abstracts/mixins';
 
-.modern-layout {
+.layout {
   min-height: 110vh;
   display: flex;
   flex-direction: column;
