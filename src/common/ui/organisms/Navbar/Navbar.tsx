@@ -9,8 +9,24 @@ const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isCartOpen, setIsCartOpen] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
   const location = useLocation();
   const { getTotalItems } = useCart();
+
+  useEffect(() => {
+    const checkMobile = () => {
+      const mobile = window.innerWidth < 1024;
+      setIsMobile(mobile);
+      
+      if (!mobile && isMobileMenuOpen) {
+        setIsMobileMenuOpen(false);
+      }
+    };
+
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, [isMobileMenuOpen]);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -46,7 +62,7 @@ const Navbar = () => {
             whileTap={{ scale: 0.95 }}
           >
             <Link to="/" className="navbar__logo">
-              <span className="navbar__logo-text">StyleStore</span>
+              <span className="navbar__logo-text">CuraModa</span>
               <span className="navbar__logo-dot">.</span>
             </Link>
           </motion.div>
@@ -155,87 +171,93 @@ const Navbar = () => {
             )}
           </motion.button>
 
-          <motion.button
-            className="navbar__toggle"
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            whileTap={{ scale: 0.9 }}
-            aria-label="Toggle mobile menu"
-          >
-            <motion.div
-              className="navbar__hamburger"
-              animate={isMobileMenuOpen ? "open" : "closed"}
+          {isMobile && (
+            <motion.button
+              className="navbar__toggle"
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              whileTap={{ scale: 0.9 }}
+              aria-label="Toggle mobile menu"
             >
-              <motion.span
-                variants={{
-                  closed: { rotate: 0, y: 0 },
-                  open: { rotate: 45, y: 8 }
-                }}
-              />
-              <motion.span
-                variants={{
-                  closed: { opacity: 1 },
-                  open: { opacity: 0 }
-                }}
-              />
-              <motion.span
-                variants={{
-                  closed: { rotate: 0, y: 0 },
-                  open: { rotate: -45, y: -8 }
-                }}
-              />
-            </motion.div>
-          </motion.button>
+              <motion.div
+                className="navbar__hamburger"
+                animate={isMobileMenuOpen ? "open" : "closed"}
+              >
+                <motion.span
+                  variants={{
+                    closed: { rotate: 0, y: 0 },
+                    open: { rotate: 45, y: 8 }
+                  }}
+                />
+                <motion.span
+                  variants={{
+                    closed: { opacity: 1 },
+                    open: { opacity: 0 }
+                  }}
+                />
+                <motion.span
+                  variants={{
+                    closed: { rotate: 0, y: 0 },
+                    open: { rotate: -45, y: -8 }
+                  }}
+                />
+              </motion.div>
+            </motion.button>
+          )}
         </div>
       </nav>
 
-      <motion.div
-        className="navbar__mobile"
-        initial={false}
-        animate={isMobileMenuOpen ? "open" : "closed"}
-        variants={{
-          open: {
-            opacity: 1,
-            height: "auto",
-            transition: {
-              duration: 0.3,
-              ease: "easeOut",
-              staggerChildren: 0.05,
-              delayChildren: 0.1
+      {isMobile && (
+        <motion.div
+          className="navbar__mobile"
+          initial={false}
+          animate={isMobileMenuOpen ? "open" : "closed"}
+          variants={{
+            open: {
+              opacity: 1,
+              height: "auto",
+              transition: {
+                duration: 0.3,
+                ease: "easeOut",
+                staggerChildren: 0.05,
+                delayChildren: 0.1
+              }
+            },
+            closed: {
+              opacity: 0,
+              height: 0,
+              transition: {
+                duration: 0.3,
+                ease: "easeIn",
+                staggerChildren: 0.05,
+                staggerDirection: -1
+              }
             }
-          },
-          closed: {
-            opacity: 0,
-            height: 0,
-            transition: {
-              duration: 0.3,
-              ease: "easeIn",
-              staggerChildren: 0.05,
-              staggerDirection: -1
-            }
-          }
-        }}
-      >
-        <motion.ul className="navbar__mobile-menu">
-          {navItems.map((item) => (
-            <motion.li
-              key={item.to}
-              className="navbar__mobile-item"
-              variants={{
-                open: { opacity: 1, y: 0 },
-                closed: { opacity: 0, y: -20 }
-              }}
-            >
-              <Link
-                to={item.to}
-                className={`navbar__mobile-link ${isActiveLink(item.to) ? 'navbar__mobile-link--active' : ''}`}
-                onClick={() => setIsMobileMenuOpen(false)}
+          }}
+          onAnimationStart={() => {}}
+          onAnimationComplete={() => {}}
+        >
+          <motion.ul className="navbar__mobile-menu">
+            {navItems.map((item) => (
+              <motion.li
+                key={item.to}
+                className="navbar__mobile-item"
+                variants={{
+                  open: { opacity: 1, y: 0 },
+                  closed: { opacity: 0, y: -20 }
+                }}
               >
-                {item.label}
-              </Link>
-            </motion.li>
-          ))}
-        </motion.ul>
-      </motion.div>
+                <Link
+                  to={item.to}
+                  className={`navbar__mobile-link ${isActiveLink(item.to) ? 'navbar__mobile-link--active' : ''}`}
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  {item.label}
+                </Link>
+              </motion.li>
+            ))}
+          </motion.ul>
+        </motion.div>
+      )}
 
       <CartModal isOpen={isCartOpen} onClose={() => setIsCartOpen(false)} />
     </motion.header>

@@ -42,7 +42,7 @@ const Footer = () => {
           >
             <Link to="/" className="footer__logo">
               <span className="footer__logo-text">
-                StyleStore
+                CuraModa
               </span>
               <motion.span
                 className="footer__logo-dot"
@@ -123,7 +123,7 @@ const Footer = () => {
         >
           <div className="footer__bottom-content">
             <p className="footer__copyright">
-              © {currentYear} StyleStore. Todos los derechos reservados.
+              © {currentYear} CuraModa. Todos los derechos reservados.
             </p>
             
             <div className="footer__legal">
