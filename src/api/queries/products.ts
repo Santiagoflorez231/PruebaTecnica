@@ -17,11 +17,27 @@ const transformProduct = (product: any): ProductDisplay => {
   let listPrice = 0;
   let available = false;
   
-  if (firstItem?.sellers && firstItem.sellers.length > 0) {
-    const offer = firstItem.sellers[0].commertialOffer;
-    price = offer.Price || 0;
-    listPrice = offer.ListPrice || 0;
-    available = offer.IsAvailable || false;
+  if (product.items && product.items.length > 0) {
+    const availableItem = product.items.find((item: any) => 
+      item.sellers && 
+      item.sellers.length > 0 && 
+      item.sellers[0].commertialOffer?.IsAvailable
+    );
+    
+    if (availableItem) {
+      const offer = availableItem.sellers[0].commertialOffer;
+      price = offer.Price || 0;
+      listPrice = offer.ListPrice || 0;
+      available = true;
+    } else {
+      // Si no hay items disponibles, tomar datos del primer item para mostrar precio
+      if (firstItem?.sellers && firstItem.sellers.length > 0) {
+        const offer = firstItem.sellers[0].commertialOffer;
+        price = offer.Price || 0;
+        listPrice = offer.ListPrice || 0;
+      }
+      available = false;
+    }
   }
 
   return {

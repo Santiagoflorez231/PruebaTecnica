@@ -11,6 +11,11 @@ const ProductCard = ({ product }: ProductCardProps) => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
+  // // Debug temporal
+  // if (product.name.includes('Polo manga corta')) {
+  //   console.log('📦 ProductCard - Product:', product.name, 'Available:', product.available);
+  // }
+
   const nextImage = (e: React.MouseEvent) => {
     e.stopPropagation(); 
     if (product.images && product.images.length > 1) {
