@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useCart } from '@/common/context/CartContext';
 import { useNotification } from '@/common/context/NotificationContext';
@@ -15,6 +15,18 @@ const CartModal: React.FC<CartModalProps> = ({ isOpen, onClose }) => {
   const { items, updateQuantity, removeItem, getTotalPrice, clearCart } = useCart();
   const { showNotification } = useNotification();
   const [currentStep, setCurrentStep] = useState<CartStep>('cart');
+
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
+  }, [isOpen]);
 
   const formatPrice = (price: number) => {
     return new Intl.NumberFormat('es-CO', {

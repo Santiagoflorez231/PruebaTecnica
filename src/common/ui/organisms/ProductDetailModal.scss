@@ -191,7 +191,6 @@
     
     @media (max-width: 768px) {
       gap: 0.75rem;
-      padding-bottom: 120px; 
     }
   }
 
@@ -424,20 +423,6 @@
 
   .product-actions {
     margin: 1rem 0;
-
-    @media (max-width: 768px) {
-      position: fixed;
-      bottom: 20px;
-      left: 20px;
-      right: 20px;
-      z-index: 11;
-      margin: 0;
-      background: rgba(255, 255, 255, 0.95);
-      backdrop-filter: blur(12px);
-      padding: 1rem;
-      border-radius: 16px;
-      box-shadow: 0 8px 32px rgba(15, 23, 42, 0.15);
-    }
 
     .add-to-cart-btn {
       width: 100%;
