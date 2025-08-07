@@ -54,7 +54,6 @@ export const CartProvider: React.FC<CartProviderProps> = ({ children }) => {
   }, []);
 
   useEffect(() => {
-    // Solo guardar después de que se haya cargado inicialmente
     if (isLoaded) {
       try {
         localStorage.setItem('cart', JSON.stringify(items));

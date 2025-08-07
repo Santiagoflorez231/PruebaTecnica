@@ -42,7 +42,6 @@
     }
   }
   
-  // Brand section
   &__brand {
     display: flex;
     flex-direction: column;
@@ -263,8 +262,8 @@
   }
   
   &__copyright {
-    color: #6b7280; // text-gray-500
-    font-size: 0.875rem; // text-sm
+    color: #6b7280;  
+    font-size: 0.875rem; 
     margin: 0;
   }
   

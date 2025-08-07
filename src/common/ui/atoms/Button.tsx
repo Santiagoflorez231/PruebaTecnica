@@ -23,20 +23,16 @@ const Button = ({
   const getClasses = () => {
     let classes = ['btn'];
     
-    // Variante
     classes.push(`btn--${variant}`);
     
-    // Tamaño
     if (size !== 'md') {
       classes.push(`btn--${size}`);
     }
     
-    // Modificadores
     if (fullWidth) classes.push('btn--full');
     if (circle) classes.push('btn--circle');
     if (loading) classes.push('btn:loading');
     
-    // Clases adicionales
     if (className) classes.push(className);
     
     return classes.join(' ');

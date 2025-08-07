@@ -30,7 +30,6 @@ const transformProduct = (product: any): ProductDisplay => {
       listPrice = offer.ListPrice || 0;
       available = true;
     } else {
-      // Si no hay items disponibles, tomar datos del primer item para mostrar precio
       if (firstItem?.sellers && firstItem.sellers.length > 0) {
         const offer = firstItem.sellers[0].commertialOffer;
         price = offer.Price || 0;
