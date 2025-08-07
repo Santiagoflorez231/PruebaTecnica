@@ -38,25 +38,31 @@ interface CartProviderProps {
 
 export const CartProvider: React.FC<CartProviderProps> = ({ children }) => {
   const [items, setItems] = useState<CartItem[]>([]);
+  const [isLoaded, setIsLoaded] = useState(false);
 
   useEffect(() => {
     const savedCart = localStorage.getItem('cart');
     if (savedCart) {
       try {
-        setItems(JSON.parse(savedCart));
+        const parsed = JSON.parse(savedCart);
+        setItems(parsed);
       } catch (error) {
         console.error('Error loading cart from localStorage:', error);
       }
     }
+    setIsLoaded(true);
   }, []);
 
   useEffect(() => {
-    try {
-      localStorage.setItem('cart', JSON.stringify(items));
-    } catch (error) {
-      console.error('Error saving cart to localStorage:', error);
+    // Solo guardar después de que se haya cargado inicialmente
+    if (isLoaded) {
+      try {
+        localStorage.setItem('cart', JSON.stringify(items));
+      } catch (error) {
+        console.error('Error saving cart to localStorage:', error);
+      }
     }
-  }, [items]);
+  }, [items, isLoaded]);
 
   const addItem = (newItem: Omit<CartItem, 'quantity'>) => {
     setItems(prevItems => {
