@@ -4,6 +4,7 @@ import { useProductDetail } from '@/api/queries/productDetail';
 import { useCart } from '@/common/context/CartContext';
 import { useNotification } from '@/common/context/NotificationContext';
 import ProductModal from '@/common/ui/molecules/ProductModal';
+import RelatedProducts from '@/common/ui/molecules/RelatedProducts';
 import Button from '@/common/ui/atoms/Button';
 import './ProductDetailModal.scss';
 
@@ -11,12 +12,14 @@ interface ProductDetailModalProps {
   productId: string;
   isOpen: boolean;
   onClose: () => void;
+  onProductChange?: (productId: string) => void;
 }
 
 const ProductDetailModal: React.FC<ProductDetailModalProps> = ({
   productId,
   isOpen,
   onClose,
+  onProductChange,
 }) => {
   const { data: product, isLoading, error } = useProductDetail(productId);
   const { addItem } = useCart();
@@ -25,6 +28,23 @@ const ProductDetailModal: React.FC<ProductDetailModalProps> = ({
   const [selectedVariations, setSelectedVariations] = useState<Record<string, string>>({});
   const [variationError, setVariationError] = useState<string>('');
   const [isAdding, setIsAdding] = useState(false);
+  const modalContentRef = React.useRef<HTMLDivElement>(null);
+
+  React.useEffect(() => {
+    setSelectedImageIndex(0);
+    setSelectedVariations({});
+    setVariationError('');
+    setIsAdding(false);
+  }, [productId]);
+
+  React.useEffect(() => {
+    if (modalContentRef.current) {
+      modalContentRef.current.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    }
+  }, [productId]);
 
   const selectedItem = useMemo(() => {
     if (!product?.items) return null;
@@ -128,6 +148,19 @@ const ProductDetailModal: React.FC<ProductDetailModalProps> = ({
     }).format(price);
   };
 
+  const handleProductChange = (newProductId: string) => {
+    if (onProductChange) {
+      onProductChange(newProductId);
+      
+      setTimeout(() => {
+        const modalElement = document.querySelector('.product-modal');
+        if (modalElement) {
+          modalElement.scrollTop = 0;
+        }
+      }, 50);
+    }
+  };
+
   const handleAddToCart = () => {
     if (!product || !selectedItem) return;
 
@@ -207,7 +240,7 @@ const ProductDetailModal: React.FC<ProductDetailModalProps> = ({
 
   return (
     <ProductModal isOpen={isOpen} onClose={onClose}>
-      <div className="product-detail">
+      <div className="product-detail" ref={modalContentRef}>
         {isLoading && (
           <div className="product-detail__loading">
             <motion.div
@@ -230,45 +263,53 @@ const ProductDetailModal: React.FC<ProductDetailModalProps> = ({
         )}
 
         {product && selectedItem && (
-          <div className="product-detail__content">
-            <div className="product-detail__images">
-              <div className="main-image">
-                {currentImages.length > 0 ? (
-                  <motion.img
-                    key={selectedImageIndex}
-                    src={currentImages[selectedImageIndex]?.imageUrl}
-                    alt={currentImages[selectedImageIndex]?.imageText || product.productName}
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    transition={{ duration: 0.3 }}
-                  />
-                ) : (
-                  <div className="no-image">
-                    <p>Imagen no disponible</p>
+          <div className="product-detail__wrapper">
+            <div className="product-detail__content">
+              <div className="product-detail__images">
+                <div className="main-image">
+                  {currentImages.length > 0 ? (
+                    <motion.img
+                      key={selectedImageIndex}
+                      src={currentImages[selectedImageIndex]?.imageUrl}
+                      alt={currentImages[selectedImageIndex]?.imageText || product.productName}
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      transition={{ duration: 0.3 }}
+                    />
+                  ) : (
+                    <div className="no-image">
+                      <p>Imagen no disponible</p>
+                    </div>
+                  )}
+                </div>
+                
+                {currentImages.length > 1 && (
+                  <div className="image-thumbnails">
+                    {currentImages.map((image, index) => (
+                      <button
+                        key={image.imageId}
+                        className={`thumbnail ${index === selectedImageIndex ? 'active' : ''}`}
+                        onClick={() => setSelectedImageIndex(index)}
+                      >
+                        <img
+                          src={image.imageUrl}
+                          alt={`Vista ${index + 1}`}
+                          loading="lazy"
+                        />
+                      </button>
+                    ))}
+                  </div>
+                )}
+
+                {product.metaTagDescription && (
+                  <div className="product-description desktop-only">
+                    <h3>Descripción</h3>
+                    <p>{product.metaTagDescription}</p>
                   </div>
                 )}
               </div>
-              
-              {currentImages.length > 1 && (
-                <div className="image-thumbnails">
-                  {currentImages.map((image, index) => (
-                    <button
-                      key={image.imageId}
-                      className={`thumbnail ${index === selectedImageIndex ? 'active' : ''}`}
-                      onClick={() => setSelectedImageIndex(index)}
-                    >
-                      <img
-                        src={image.imageUrl}
-                        alt={`Vista ${index + 1}`}
-                        loading="lazy"
-                      />
-                    </button>
-                  ))}
-                </div>
-              )}
-            </div>
 
-            <div className="product-detail__info">
+              <div className="product-detail__info">
               <div className="product-header">
                 <h1 className="product-title">{product.productName}</h1>
                 <p className="product-brand">{product.brand}</p>
@@ -389,7 +430,8 @@ const ProductDetailModal: React.FC<ProductDetailModalProps> = ({
               )}
 
               {product.metaTagDescription && (
-                <div className="product-description">
+                <div className="product-description mobile-only">
+                  <h3>Descripción</h3>
                   <p>{product.metaTagDescription}</p>
                 </div>
               )}
@@ -411,6 +453,14 @@ const ProductDetailModal: React.FC<ProductDetailModalProps> = ({
               </div>
             </div>
           </div>
+
+          <div className="product-detail__related">
+            <RelatedProducts
+              currentProductId={productId}
+              onProductClick={handleProductChange}
+            />
+          </div>
+        </div>
         )}
       </div>
     </ProductModal>

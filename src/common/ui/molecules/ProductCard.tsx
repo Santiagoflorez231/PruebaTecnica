@@ -10,11 +10,8 @@ interface ProductCardProps {
 const ProductCard = ({ product }: ProductCardProps) => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [currentProductId, setCurrentProductId] = useState(product.id.toString());
 
-  // // Debug temporal
-  // if (product.name.includes('Polo manga corta')) {
-  //   console.log('📦 ProductCard - Product:', product.name, 'Available:', product.available);
-  // }
 
   const nextImage = (e: React.MouseEvent) => {
     e.stopPropagation(); 
@@ -38,6 +35,13 @@ const ProductCard = ({ product }: ProductCardProps) => {
 
   const closeModal = () => {
     setIsModalOpen(false);
+    setTimeout(() => {
+      setCurrentProductId(product.id.toString());
+    }, 300);
+  };
+
+  const handleProductChange = (newProductId: string) => {
+    setCurrentProductId(newProductId);
   };
 
   const formattedPrice = new Intl.NumberFormat('es-CO', {
@@ -125,9 +129,10 @@ const ProductCard = ({ product }: ProductCardProps) => {
 
       {isModalOpen && (
         <ProductDetailModal
-          productId={product.id.toString()}
+          productId={currentProductId}
           isOpen={isModalOpen}
           onClose={closeModal}
+          onProductChange={handleProductChange}
         />
       )}
     </>
