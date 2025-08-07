@@ -191,6 +191,7 @@
     
     @media (max-width: 768px) {
       gap: 0.75rem;
+      padding-bottom: 120px; 
     }
   }
 
@@ -424,6 +425,20 @@
   .product-actions {
     margin: 1rem 0;
 
+    @media (max-width: 768px) {
+      position: fixed;
+      bottom: 20px;
+      left: 20px;
+      right: 20px;
+      z-index: 11;
+      margin: 0;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(12px);
+      padding: 1rem;
+      border-radius: 16px;
+      box-shadow: 0 8px 32px rgba(15, 23, 42, 0.15);
+    }
+
     .add-to-cart-btn {
       width: 100%;
       padding: 1rem 2rem;
@@ -464,6 +479,42 @@
       &:active {
         transform: translateY(-1px);
         box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
+      }
+
+      &:disabled,
+      &.adding {
+        opacity: 0.7;
+        cursor: not-allowed;
+        transform: none;
+        background: #999;
+        
+        &:before {
+          display: none;
+        }
+      }
+
+      &.adding {
+        position: relative;
+        
+        &::after {
+          content: '';
+          position: absolute;
+          width: 16px;
+          height: 16px;
+          margin: auto;
+          border: 2px solid transparent;
+          border-top: 2px solid white;
+          border-radius: 50%;
+          animation: spin 1s linear infinite;
+          top: 50%;
+          right: 1rem;
+          transform: translateY(-50%);
+        }
+      }
+
+      @keyframes spin {
+        0% { transform: translateY(-50%) rotate(0deg); }
+        100% { transform: translateY(-50%) rotate(360deg); }
       }
 
       @media (max-width: 768px) {

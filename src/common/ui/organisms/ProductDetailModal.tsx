@@ -1,6 +1,8 @@
 import React, { useState, useMemo } from 'react';
 import { motion } from 'framer-motion';
 import { useProductDetail } from '@/api/queries/productDetail';
+import { useCart } from '@/common/context/CartContext';
+import { useNotification } from '@/common/context/NotificationContext';
 import ProductModal from '@/common/ui/molecules/ProductModal';
 import Button from '@/common/ui/atoms/Button';
 import './ProductDetailModal.scss';
@@ -17,9 +19,12 @@ const ProductDetailModal: React.FC<ProductDetailModalProps> = ({
   onClose,
 }) => {
   const { data: product, isLoading, error } = useProductDetail(productId);
+  const { addItem } = useCart();
+  const { showNotification } = useNotification();
   const [selectedImageIndex, setSelectedImageIndex] = useState(0);
   const [selectedVariations, setSelectedVariations] = useState<Record<string, string>>({});
   const [variationError, setVariationError] = useState<string>('');
+  const [isAdding, setIsAdding] = useState(false);
 
   const selectedItem = useMemo(() => {
     if (!product?.items) return null;
@@ -121,6 +126,34 @@ const ProductDetailModal: React.FC<ProductDetailModalProps> = ({
       currency: 'COP',
       minimumFractionDigits: 0,
     }).format(price);
+  };
+
+  const handleAddToCart = () => {
+    if (!product || !selectedItem) return;
+
+    setIsAdding(true);
+    
+    const cartItem = {
+      id: selectedItem.itemId,
+      name: product.productName,
+      price: selectedItem.sellers![0].commertialOffer.Price,
+      originalPrice: selectedItem.sellers![0].commertialOffer.ListPrice > selectedItem.sellers![0].commertialOffer.Price 
+        ? selectedItem.sellers![0].commertialOffer.ListPrice 
+        : undefined,
+      image: currentImages[0]?.imageUrl || '',
+      brand: product.brand,
+      color: selectedVariations.Color,
+      size: selectedVariations.Talla,
+    };
+
+    addItem(cartItem);
+    
+    showNotification(`${product.productName} se agregó al carrito`, 'success');
+
+    setTimeout(() => {
+      setIsAdding(false);
+      onClose(); 
+    }, 1000);
   };
 
   const getAvailableVariations = () => {
@@ -346,12 +379,11 @@ const ProductDetailModal: React.FC<ProductDetailModalProps> = ({
               {selectedItem.sellers?.[0]?.commertialOffer?.IsAvailable && (
                 <div className="product-actions">
                   <button
-                    className="add-to-cart-btn"
-                    onClick={() => {
-                      window.open(selectedItem.sellers![0].addToCartLink, '_blank');
-                    }}
+                    className={`add-to-cart-btn ${isAdding ? 'adding' : ''}`}
+                    onClick={handleAddToCart}
+                    disabled={isAdding}
                   >
-                    Agregar al Carrito
+                    {isAdding ? 'Agregando...' : 'Agregar al Carrito'}
                   </button>
                 </div>
               )}

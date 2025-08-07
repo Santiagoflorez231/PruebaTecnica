@@ -1,12 +1,16 @@
 import { Link, useLocation } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { useState, useEffect } from 'react';
+import { useCart } from '@/common/context/CartContext';
+import CartModal from '@/common/ui/molecules/CartModal';
 import './Navbar.scss';
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isCartOpen, setIsCartOpen] = useState(false);
   const location = useLocation();
+  const { getTotalItems } = useCart();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -88,6 +92,7 @@ const Navbar = () => {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               aria-label="Carrito de compras"
+              onClick={() => setIsCartOpen(true)}
             >
               <svg
                 width="24"
@@ -104,7 +109,16 @@ const Navbar = () => {
                 <path d="M20 22C20.5523 22 21 21.5523 21 21C21 20.4477 20.5523 20 20 20C19.4477 20 19 20.4477 19 21C19 21.5523 19.4477 22 20 22Z" />
                 <path d="M1 1H5L7.68 14.39C7.77144 14.8504 8.02191 15.264 8.38755 15.5583C8.75318 15.8526 9.2107 16.009 9.68 16H19.4C19.8693 16.009 20.3268 15.8526 20.6925 15.5583C21.0581 15.264 21.3086 14.8504 21.4 14.39L23 6H6" />
               </svg>
-              <span className="navbar__cart-count">0</span>
+              {getTotalItems() > 0 && (
+                <motion.span
+                  className="navbar__cart-count"
+                  initial={{ scale: 0 }}
+                  animate={{ scale: 1 }}
+                  key={getTotalItems()}
+                >
+                  {getTotalItems()}
+                </motion.span>
+              )}
             </motion.button>
           </motion.div>
 
@@ -113,6 +127,7 @@ const Navbar = () => {
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             aria-label="Carrito de compras"
+            onClick={() => setIsCartOpen(true)}
           >
             <svg
               width="22"
@@ -128,7 +143,16 @@ const Navbar = () => {
               <path d="M20 22C20.5523 22 21 21.5523 21 21C21 20.4477 20.5523 20 20 20C19.4477 20 19 20.4477 19 21C19 21.5523 19.4477 22 20 22Z" />
               <path d="M1 1H5L7.68 14.39C7.77144 14.8504 8.02191 15.264 8.38755 15.5583C8.75318 15.8526 9.2107 16.009 9.68 16H19.4C19.8693 16.009 20.3268 15.8526 20.6925 15.5583C21.0581 15.264 21.3086 14.8504 21.4 14.39L23 6H6" />
             </svg>
-            <span className="navbar__cart-count">0</span>
+            {getTotalItems() > 0 && (
+              <motion.span
+                className="navbar__cart-count"
+                initial={{ scale: 0 }}
+                animate={{ scale: 1 }}
+                key={getTotalItems()}
+              >
+                {getTotalItems()}
+              </motion.span>
+            )}
           </motion.button>
 
           <motion.button
@@ -212,6 +236,8 @@ const Navbar = () => {
           ))}
         </motion.ul>
       </motion.div>
+
+      <CartModal isOpen={isCartOpen} onClose={() => setIsCartOpen(false)} />
     </motion.header>
   );
 };
