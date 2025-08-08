@@ -62,7 +62,6 @@ src/
 
 ## ✨ Características principales
 
-- **Catálogo de productos** con filtros y búsqueda
 - **Modal de detalles** de producto con selección de variantes
 - **Carrito de compras** persistente
 - **Checkout** con confirmación de compra
