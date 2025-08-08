@@ -96,6 +96,3 @@ El diseño y UX del proyecto se inspiró en las siguientes referencias:
 - **[Chanta Backpack Store](https://dribbble.com/shots/24206270-Chanta-Backpack-Store-Category)** - Layout de grilla de productos y cards
 - **[Uniqlo](https://www.uniqlo.com/ph/en/baby)** - UX de navegación y organización de productos
 
-Proyecto desarrollado para prueba técnica de FrontEnd.
-
-
