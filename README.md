@@ -88,4 +88,15 @@ src/
 - La carpeta common/ui implementa una arquitectura de UI basada en Atomic Design
 - La carpeta `docs/json` contiene una muestra del análisis que hice a la API para entender su estructura
 
+## 🎨 Inspiración de diseño
+
+El diseño y UX del proyecto se inspiró en las siguientes referencias:
+
+- **[Splitbase Hero Sections](https://splitbase.com/blog/hero-section)** - Para el diseño del hero principal
+- **[Osklen](https://www.osklen.com)** - Referencia de diseño limpio y minimalista
+- **[Chanta Backpack Store](https://dribbble.com/shots/24206270-Chanta-Backpack-Store-Category)** - Layout de grilla de productos y cards
+- **[Uniqlo](https://www.uniqlo.com/ph/en/baby)** - UX de navegación y organización de productos
+
+Proyecto desarrollado para prueba técnica de FrontEnd.
+
 
